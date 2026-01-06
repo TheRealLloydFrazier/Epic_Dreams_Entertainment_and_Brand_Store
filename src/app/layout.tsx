@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import './globals.css';
-import { Footer } from '@components/layout/Footer';
-import { Header } from '@components/layout/Header';
 import { fontSans, fontDisplay } from '@lib/utils/fonts';
 import { Providers } from '@components/layout/Providers';
+import { ConditionalLayout } from '@components/layout/ConditionalLayout';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
@@ -41,9 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={`${fontSans.variable} ${fontDisplay.variable}`} suppressHydrationWarning>
       <body className="bg-black text-foreground min-h-screen">
         <Providers>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+          <ConditionalLayout>{children}</ConditionalLayout>
         </Providers>
       </body>
     </html>

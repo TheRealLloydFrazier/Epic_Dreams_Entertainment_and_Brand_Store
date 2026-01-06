@@ -40,7 +40,7 @@ export const HOLDING_COMPANY: CompanyInfo = {
   vision: 'To be the premier holding company for visionary enterprises that shape culture, technology, and human experience.',
   tagline: 'Where Dreams Become Reality',
   industry: 'Asset Management & Holding Company',
-  website: 'https://epicdreams.com',
+  website: 'https://epicdreamsassetmanagement.com',
   socials: {
     instagram: 'https://instagram.com/epicdreamsholding',
     linkedin: 'https://linkedin.com/company/epic-dreams-holding',
@@ -126,6 +126,8 @@ export const BRAND_COLORS = {
 
 // Company contact information
 export const CONTACT_INFO = {
-  email: 'contact@epicdreams.com',
-  support: 'support@epicdreams.com',
+  email: 'contact@epicdreamsassetmanagement.com',
+  support: 'support@epicdreamsassetmanagement.com',
+  phone: '+1 (833) 605-6065',
+  phoneTollFree: true,
 };
