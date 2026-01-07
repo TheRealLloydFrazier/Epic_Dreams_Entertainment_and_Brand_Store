@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { ShoppingBag, Menu } from 'lucide-react';
 import { useState } from 'react';
@@ -24,8 +25,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-white/10">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-center gap-2 text-lg font-semibold uppercase tracking-[0.2em]">
-          Epic Dreams
+        <Link href="/" className="flex items-center gap-3 text-lg font-semibold uppercase tracking-[0.2em]">
+          <Image
+            src="/images/logo.svg"
+            alt="Epic Dreams Logo"
+            width={40}
+            height={40}
+            className="h-10 w-10"
+          />
+          <span className="hidden sm:inline">Epic Dreams</span>
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (

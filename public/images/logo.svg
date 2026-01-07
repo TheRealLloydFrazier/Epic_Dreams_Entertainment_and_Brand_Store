@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Cosmic background gradient -->
+    <radialGradient id="cosmicBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="50%" stop-color="#0d0d2b"/>
+      <stop offset="100%" stop-color="#030303"/>
+    </radialGradient>
+
+    <!-- Nebula glow - orange -->
+    <radialGradient id="nebulaOrange" cx="20%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#ff4500" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ff4500" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Nebula glow - purple -->
+    <radialGradient id="nebulaPurple" cx="80%" cy="70%" r="50%">
+      <stop offset="0%" stop-color="#9d4edd" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#7b2cbf" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#5a189a" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gold gradient for infinity symbol -->
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="25%" stop-color="#ffb347"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="75%" stop-color="#ffb347"/>
+      <stop offset="100%" stop-color="#ffd700"/>
+    </linearGradient>
+
+    <!-- Gold rim gradient -->
+    <linearGradient id="rimGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd700"/>
+      <stop offset="30%" stop-color="#b8860b"/>
+      <stop offset="50%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#b8860b"/>
+      <stop offset="100%" stop-color="#ffd700"/>
+    </linearGradient>
+
+    <!-- Inner ring gradient -->
+    <linearGradient id="innerRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a5f"/>
+      <stop offset="50%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Strong glow for infinity -->
+    <filter id="infinityGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer cosmic background circle -->
+  <circle cx="100" cy="100" r="98" fill="url(#cosmicBg)"/>
+
+  <!-- Nebula effects -->
+  <circle cx="40" cy="50" r="80" fill="url(#nebulaOrange)"/>
+  <circle cx="160" cy="150" r="70" fill="url(#nebulaPurple)"/>
+
+  <!-- Stars -->
+  <g fill="#ffffff" opacity="0.8">
+    <circle cx="30" cy="40" r="1"/>
+    <circle cx="45" cy="25" r="0.5"/>
+    <circle cx="170" cy="35" r="1"/>
+    <circle cx="155" cy="50" r="0.5"/>
+    <circle cx="25" cy="160" r="0.8"/>
+    <circle cx="175" cy="165" r="1"/>
+    <circle cx="160" cy="175" r="0.5"/>
+    <circle cx="50" cy="170" r="0.7"/>
+    <circle cx="100" cy="25" r="0.8"/>
+    <circle cx="180" cy="100" r="0.6"/>
+    <circle cx="20" cy="100" r="0.7"/>
+    <circle cx="85" cy="175" r="0.5"/>
+  </g>
+
+  <!-- Outer gold rim -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#rimGradient)" stroke-width="4" filter="url(#glow)"/>
+
+  <!-- Inner dark blue ring -->
+  <circle cx="100" cy="100" r="82" fill="none" stroke="url(#innerRing)" stroke-width="12"/>
+
+  <!-- Inner gold rim -->
+  <circle cx="100" cy="100" r="74" fill="none" stroke="url(#rimGradient)" stroke-width="2"/>
+
+  <!-- Infinity symbol with glow -->
+  <g filter="url(#infinityGlow)">
+    <path
+      d="M100 100
+         C100 85, 115 70, 135 70
+         C160 70, 170 85, 170 100
+         C170 115, 160 130, 135 130
+         C115 130, 100 115, 100 100
+         C100 115, 85 130, 65 130
+         C40 130, 30 115, 30 100
+         C30 85, 40 70, 65 70
+         C85 70, 100 85, 100 100"
+      fill="none"
+      stroke="url(#goldGradient)"
+      stroke-width="8"
+      stroke-linecap="round"
+    />
+  </g>
+
+  <!-- Sparkle accents on infinity -->
+  <g fill="#ffffff" opacity="0.9">
+    <circle cx="135" cy="75" r="2"/>
+    <circle cx="65" cy="125" r="1.5"/>
+  </g>
+</svg>

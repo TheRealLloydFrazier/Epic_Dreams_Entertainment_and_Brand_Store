@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { HOLDING_COMPANY, SUBSIDIARIES } from '@lib/constants/company';
 
 const entertainment = SUBSIDIARIES.find(s => s.id === 'epic-dreams-entertainment');
@@ -28,7 +29,16 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
-            <p className="font-display text-2xl uppercase tracking-[0.4em] text-white">Epic Dreams</p>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/logo.svg"
+                alt="Epic Dreams Logo"
+                width={48}
+                height={48}
+                className="h-12 w-12"
+              />
+              <p className="font-display text-2xl uppercase tracking-[0.4em] text-white">Epic Dreams</p>
+            </div>
             <p className="mt-4 text-sm text-white/60">
               Epic Dreams Entertainment is a forward-thinking label building immersive worlds through music, design, and story.
             </p>
