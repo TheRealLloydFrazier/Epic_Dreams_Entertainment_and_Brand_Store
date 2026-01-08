@@ -13,7 +13,8 @@ datasource db {
 
 enum DiscountType {
   percentage
-  fixed
+    @@schema("public")
+fixed
 }
 
 enum OrderStatus {
@@ -23,6 +24,7 @@ enum OrderStatus {
   Shipped
   Delivered
   Refunded
+  @@schema("public")
 }
 
 model Product {
@@ -37,6 +39,7 @@ model Product {
   variants    ProductVariant[]
   images      ProductImage[]
   collections CollectionProduct[]
+  @@schema("public")
 }
 
 model ProductVariant {
@@ -51,6 +54,7 @@ model ProductVariant {
   inventory      Int       @default(0)
   attributes     Json?
   orderItems     OrderItem[]
+  @@schema("public")
 }
 
 model ProductImage {
@@ -58,7 +62,8 @@ model ProductImage {
   product    Product @relation(fields: [productId], references: [id])
   productId  Int
   url        String
-  sortOrder  Int     @default(0) @map("sort_order")
+    @@schema("public")
+sortOrder  Int     @default(0) @map("sort_order")
 }
 
 model Collection {
@@ -67,6 +72,7 @@ model Collection {
   slug      String    @unique
   rule      Json?
   products  CollectionProduct[]
+  @@schema("public")
 }
 
 model CollectionProduct {
@@ -76,6 +82,7 @@ model CollectionProduct {
   productId    Int
 
   @@id([collectionId, productId])
+  @@schema("public")
 }
 
 model Order {
@@ -91,7 +98,8 @@ model Order {
   createdAt              DateTime     @default(now()) @map("created_at")
   updatedAt              DateTime     @updatedAt @map("updated_at")
   items                  OrderItem[]
-  trackingNumber         String?
+    @@schema("public")
+trackingNumber         String?
 }
 
 model OrderItem {
@@ -104,6 +112,7 @@ model OrderItem {
   sku            String
   quantity       Int
   priceCents     Int            @map("price_cents")
+  @@schema("public")
 }
 
 model Discount {
@@ -115,6 +124,7 @@ model Discount {
   endsAt     DateTime?    @map("ends_at")
   usageLimit Int?         @map("usage_limit")
   timesUsed  Int          @default(0) @map("times_used")
+  @@schema("public")
 }
 
 model Artist {
@@ -125,7 +135,8 @@ model Artist {
   bio       String
   socials   Json?
   heroImage String?  @map("hero_image")
-  releases  Release[]
+    @@schema("public")
+releases  Release[]
 }
 
 model Release {
@@ -138,6 +149,7 @@ model Release {
   links       Json?
   artist      Artist   @relation(fields: [artistId], references: [id])
   artistId    Int
+  @@schema("public")
 }
 
 model Post {
@@ -151,17 +163,20 @@ model Post {
   seo         Json?
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
+  @@schema("public")
 }
 
 model Setting {
   key   String @id
-  value Json?
+    @@schema("public")
+value Json?
 }
 
 model FileAsset {
   id        Int      @id @default(autoincrement())
   filename  String
-  url       String
+    @@schema("public")
+url       String
   createdAt DateTime @default(now()) @map("created_at")
 }
 
@@ -174,6 +189,7 @@ model AdminUser {
   createdAt       DateTime @default(now()) @map("created_at")
   updatedAt       DateTime @updatedAt @map("updated_at")
   sessions        AdminSession[]
+  @@schema("public")
 }
 
 model AdminSession {
@@ -183,6 +199,7 @@ model AdminSession {
   userId    Int
   expiresAt DateTime @map("expires_at")
   createdAt DateTime @default(now()) @map("created_at")
+  @@schema("public")
 }
 
 
@@ -199,12 +216,14 @@ model ProductArtist {
 enum CompanyType {
   holding
   subsidiary
+  @@schema("public")
 }
 
 enum CompanyStatus {
   active
   inactive
   planned
+  @@schema("public")
 }
 
 model Company {
@@ -231,4 +250,5 @@ model Company {
   metadata      Json?
   createdAt     DateTime      @default(now()) @map("created_at")
   updatedAt     DateTime      @updatedAt @map("updated_at")
+  @@schema("public")
 }
