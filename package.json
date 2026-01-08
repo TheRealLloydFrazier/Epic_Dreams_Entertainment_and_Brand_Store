@@ -1,4 +1,3 @@
-
 {
   "name": "epic-dreams-entertainment-store",
   "version": "1.0.0",
@@ -15,7 +14,7 @@
     "prisma:studio": "prisma studio",
     "db:seed": "tsx prisma/seed.ts",
     "db:verify": "node scripts/verify-db-connection.js",
-    "postbuild": "prisma db push && next-sitemap",
+    "postbuild": "prisma db push && next-sitemap"
   },
 "engines": {
   "node": "24.x",
