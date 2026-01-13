@@ -33,7 +33,7 @@ jobs:
       - name: Build Next.js app
         run: npm run build
         env:
-          NEXT_PUBLIC_APP_URL: https://epicdreamsassetmanagement.com
+          NEXT_PUBLIC_APP_URL: https://epicdreamsentertainment.com
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

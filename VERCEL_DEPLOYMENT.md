@@ -55,7 +55,7 @@ In your Vercel project dashboard:
 | Variable | Description | Example |
 |----------|-------------|---------|
 | `DATABASE_URL` | PostgreSQL connection string | `postgresql://user:pass@host:5432/db` |
-| `NEXT_PUBLIC_APP_URL` | Your deployed URL | `https://epicdreamsassetmanagement.vercel.app` |
+| `NEXT_PUBLIC_APP_URL` | Your deployed URL | `https://epicdreamsentertainment.com` |
 | `STRIPE_PUBLISHABLE_KEY` | Stripe public key | `pk_test_...` or `pk_live_...` |
 | `STRIPE_SECRET_KEY` | Stripe secret key | `sk_test_...` or `sk_live_...` |
 | `STRIPE_WEBHOOK_SECRET` | Stripe webhook signing secret | `whsec_...` (see Step 5) |
@@ -123,10 +123,10 @@ npx prisma db seed  # Optional
 
 ## Step 6: Custom Domain (Optional)
 
-To use `epicdreamsassetmanagement.com`:
+To use `epicdreamsentertainment.com`:
 
 1. Go to your Vercel project → **Settings** → **Domains**
-2. Add your domain: `epicdreamsassetmanagement.com`
+2. Add your domain: `epicdreamsentertainment.com`
 3. Follow Vercel's DNS instructions:
    - Add an A record pointing to Vercel's IP
    - Or add a CNAME record pointing to `cname.vercel-dns.com`
