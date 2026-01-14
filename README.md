@@ -1,6 +1,12 @@
 # Epic Dreams Entertainment Store
 
-A production-ready merch microstore for Epic Dreams Entertainment, built with Next.js 14, Tailwind CSS, Prisma, and Stripe. Deployable on DeepAgent with PostgreSQL.
+A production-ready merch microstore for Epic Dreams Entertainment, built with Next.js 14, Tailwind CSS, Prisma, and Stripe. Optimized for Vercel deployment with PostgreSQL.
+
+## 🚀 Quick Deploy to Vercel
+
+**Ready to go live in 5 minutes?** Check out **[VERCEL_QUICK_START.md](./VERCEL_QUICK_START.md)** for step-by-step deployment instructions.
+
+Your repository is now optimized for automatic deployment from GitHub to Vercel!
 
 ## Features
 
@@ -85,17 +91,29 @@ stripe listen --forward-to localhost:3000/api/stripe/webhook
 
 Copy the signing secret from the Stripe CLI output into `STRIPE_WEBHOOK_SECRET`.
 
-### Deployment on DeepAgent
+## Deployment
 
-1. Configure environment variables in DeepAgent, including Stripe keys and `ADMIN_SESSION_SECRET`.
-2. Run database migrations via `npm run prisma:migrate`.
-3. Seed the database with `npm run db:seed` (optional but recommended for demo content).
-4. Build and start the app:
+### Production Deployment (Recommended: Vercel)
+
+See **[VERCEL_QUICK_START.md](./VERCEL_QUICK_START.md)** for complete deployment instructions.
+
+Quick summary:
+1. Import repository to Vercel
+2. Add environment variables (DATABASE_URL, Stripe keys, etc.)
+3. Deploy automatically from GitHub
+4. Run `npm run db:setup` to initialize database
+5. Visit `/setup` to create admin user
+
+### Manual Deployment
+
+If deploying to another platform:
 
 ```bash
 npm run build
 npm start
 ```
+
+Make sure to set all environment variables and run database setup separately.
 
 ### Setup Checklist
 
@@ -114,8 +132,10 @@ Use 4242 4242 4242 4242 with any future expiry and any CVC. Additional test card
 - `npm run dev` – Start Next.js in development mode
 - `npm run build` – Build for production
 - `npm run start` – Start production server
-- `npm run db:seed` – Seed demo data
+- `npm run db:setup` – Initialize database schema and seed demo data
+- `npm run db:seed` – Seed demo data only
 - `npm run db:verify` – Verify database connection
+- `npm run prisma:push` – Push schema changes to database
 - `npm run prisma:migrate` – Run migrations on the database
 - `npm run prisma:studio` – Open Prisma Studio
 

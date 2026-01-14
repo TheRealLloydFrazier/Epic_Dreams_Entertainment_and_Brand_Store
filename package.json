@@ -4,17 +4,18 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "prisma generate && prisma db push --accept-data-loss",
-    "build": "node -v && npm -v && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "postinstall": "prisma generate",
+    "postbuild": "next-sitemap",
     "prisma:migrate": "prisma migrate deploy",
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio",
+    "prisma:push": "prisma db push",
     "db:seed": "tsx prisma/seed.ts",
     "db:verify": "node scripts/verify-db-connection.js",
-    "postbuild": "prisma db push && next-sitemap"
+    "db:setup": "prisma db push && tsx prisma/seed.ts"
   },
 "engines": {
   "node": "24.x",
