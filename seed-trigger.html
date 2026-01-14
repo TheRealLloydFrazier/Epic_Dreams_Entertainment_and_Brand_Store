@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed Database - Epic Dreams Entertainment</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #fff;
+        }
+        .container {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        h1 {
+            color: #00d9ff;
+            margin-top: 0;
+        }
+        button {
+            background: #00d9ff;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #00b8d9;
+        }
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+        .status.success {
+            background: #0a3d0a;
+            border: 1px solid #0d5;
+            display: block;
+        }
+        .status.error {
+            background: #3d0a0a;
+            border: 1px solid #d50;
+            display: block;
+        }
+        .status.loading {
+            background: #1a2a3a;
+            border: 1px solid #0af;
+            display: block;
+        }
+        .credentials {
+            background: #2a1a1a;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            font-family: monospace;
+        }
+        .credentials strong {
+            color: #00d9ff;
+        }
+        a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .warning {
+            background: #3d2a0a;
+            border: 1px solid #f90;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Seed Your Database</h1>
+
+        <div class="warning">
+            <strong>⚠️ Warning:</strong> This will delete all existing data and create fresh demo data including products, artists, and your admin account.
+        </div>
+
+        <p>Click the button below to populate your database with:</p>
+        <ul>
+            <li>5 Demo products (tees, hoodies, posters, etc.)</li>
+            <li>Artist profile (Kelly Layton)</li>
+            <li>Music release (Empty Chair Blues)</li>
+            <li>6 Product collections</li>
+            <li>2 Discount codes (DREAM10, FREESHIP)</li>
+            <li>2 Blog posts</li>
+            <li>Admin user account</li>
+        </ul>
+
+        <button id="seedBtn" onclick="seedDatabase()">Seed Database Now</button>
+
+        <div id="status" class="status"></div>
+    </div>
+
+    <script>
+        async function seedDatabase() {
+            const btn = document.getElementById('seedBtn');
+            const status = document.getElementById('status');
+
+            btn.disabled = true;
+            btn.textContent = 'Seeding... This may take 10-30 seconds';
+            status.className = 'status loading';
+            status.textContent = '⏳ Populating database...';
+
+            try {
+                const response = await fetch('https://epicdreamsentertainment.com/api/seed', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    status.className = 'status success';
+                    status.innerHTML = `
+                        <h3>✅ Database Seeded Successfully!</h3>
+                        <p>Your site is now fully populated with demo data.</p>
+                        <div class="credentials">
+                            <strong>Admin Login:</strong><br>
+                            Email: ${data.credentials.email}<br>
+                            Password: ${data.credentials.password}
+                        </div>
+                        <p style="margin-top: 20px;">
+                            <a href="https://epicdreamsentertainment.com" target="_blank">View Your Store →</a><br>
+                            <a href="https://epicdreamsentertainment.com/admin" target="_blank">Go to Admin Panel →</a>
+                        </p>
+                    `;
+                    btn.textContent = '✓ Seeding Complete!';
+                } else {
+                    throw new Error(data.error || 'Unknown error');
+                }
+            } catch (error) {
+                status.className = 'status error';
+                status.innerHTML = `
+                    <h3>❌ Error</h3>
+                    <p>${error.message}</p>
+                    <p>Please try again or check the browser console for details.</p>
+                `;
+                btn.disabled = false;
+                btn.textContent = 'Try Again';
+            }
+        }
+    </script>
+</body>
+</html>
