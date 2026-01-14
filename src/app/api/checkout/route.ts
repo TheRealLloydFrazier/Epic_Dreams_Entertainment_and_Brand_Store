@@ -66,26 +66,32 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'No valid items' }, { status: 400 });
   }
 
-  const couponId = parsed.data.discount ? await getOrCreateCoupon(parsed.data.discount) : undefined;
-  const session = await stripe.checkout.sessions.create({
-    mode: 'payment',
-    metadata: {
-      cart: JSON.stringify(parsed.data.items)
-    },
-    success_url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/cart?success=1`,
-    cancel_url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/cart?cancel=1`,
-    line_items: lineItems,
-    shipping_address_collection: { allowed_countries: ['US', 'CA', 'GB', 'AU'] },
-    automatic_tax: { enabled: true },
-    discounts: couponId ? [{ coupon: couponId }] : undefined,
-    shipping_options: [
-      { shipping_rate: await getOrCreateShippingRate('us_standard', 'US Standard', 500) },
-      { shipping_rate: await getOrCreateShippingRate('us_expedited', 'US Expedited', 1500) },
-      { shipping_rate: await getOrCreateShippingRate('intl_flat', 'International Flat', 2500) }
-    ]
-  });
+  try {
+    const couponId = parsed.data.discount ? await getOrCreateCoupon(parsed.data.discount) : undefined;
+    const session = await stripe.checkout.sessions.create({
+      mode: 'payment',
+      metadata: {
+        cart: JSON.stringify(parsed.data.items)
+      },
+      success_url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/cart?success=1`,
+      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/cart?cancel=1`,
+      line_items: lineItems,
+      shipping_address_collection: { allowed_countries: ['US', 'CA', 'GB', 'AU'] },
+      automatic_tax: { enabled: true },
+      discounts: couponId ? [{ coupon: couponId }] : undefined,
+      shipping_options: [
+        { shipping_rate: await getOrCreateShippingRate('us_standard', 'US Standard', 500) },
+        { shipping_rate: await getOrCreateShippingRate('us_expedited', 'US Expedited', 1500) },
+        { shipping_rate: await getOrCreateShippingRate('intl_flat', 'International Flat', 2500) }
+      ]
+    });
 
-  return NextResponse.json({ url: session.url });
+    return NextResponse.json({ url: session.url });
+  } catch (error) {
+    console.error('Checkout error:', error);
+    const message = error instanceof Error ? error.message : 'Failed to create checkout session';
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }
 
 async function getOrCreateShippingRate(key: string, name: string, amount: number) {
