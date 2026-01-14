@@ -3,6 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export function LoginForm() {
   const {
@@ -64,6 +65,14 @@ export function LoginForm() {
       >
         {loading ? 'Signing in…' : 'Sign In'}
       </button>
+      <div className="text-center">
+        <Link
+          href="/admin/forgot-password"
+          className="text-xs text-white/50 hover:text-accent-teal"
+        >
+          Forgot password?
+        </Link>
+      </div>
     </form>
   );
 }

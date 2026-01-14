@@ -181,14 +181,16 @@ url       String
 }
 
 model AdminUser {
-  id              Int      @id @default(autoincrement())
-  email           String   @unique
-  passwordHash    String   @map("password_hash")
-  role            String   @default("admin")
-  mustChangePassword Boolean @default(true) @map("must_change_password")
-  createdAt       DateTime @default(now()) @map("created_at")
-  updatedAt       DateTime @updatedAt @map("updated_at")
-  sessions        AdminSession[]
+  id                      Int       @id @default(autoincrement())
+  email                   String    @unique
+  passwordHash            String    @map("password_hash")
+  role                    String    @default("admin")
+  mustChangePassword      Boolean   @default(true) @map("must_change_password")
+  passwordResetToken      String?   @unique @map("password_reset_token")
+  passwordResetExpiresAt  DateTime? @map("password_reset_expires_at")
+  createdAt               DateTime  @default(now()) @map("created_at")
+  updatedAt               DateTime  @updatedAt @map("updated_at")
+  sessions                AdminSession[]
   @@schema("public")
 }
 
