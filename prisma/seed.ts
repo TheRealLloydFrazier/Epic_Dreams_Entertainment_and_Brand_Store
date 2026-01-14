@@ -383,13 +383,13 @@ async function main() {
   const passwordHash = await bcrypt.hash('ChangeMe123!', 12);
   await prisma.adminUser.create({
     data: {
-      email: 'lloyd@epicdreamsentertainment.com',
+      email: 'admin@epicdreamsentertainment.com',
       passwordHash,
       mustChangePassword: true
     }
   });
 
-  console.log('Seed data created successfully. Admin: lloyd@epicdreamsentertainment.com / ChangeMe123!');
+  console.log('Seed data created successfully. Admin: admin@epicdreamsentertainment.com / ChangeMe123!');
 }
 
 main()
