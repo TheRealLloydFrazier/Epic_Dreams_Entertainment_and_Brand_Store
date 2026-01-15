@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { prisma } from '@lib/db/prisma';
 import { AddToCartForm } from '@components/store/AddToCartForm';
 import { RelatedProducts } from '@components/store/RelatedProducts';
+import { Logo } from '@components/ui/Logo';
 import type { Metadata } from 'next';
 import type { StoreProduct } from '@lib/types/store';
 
@@ -84,7 +85,10 @@ export default async function ProductPage({ params }: { params: { slug: string }
           </div>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.4em] text-accent-teal">Epic Dreams Merch</p>
+          <div className="flex items-center gap-3">
+            <Logo company="epic-dreams-entertainment" variant="primary" size="sm" />
+            <p className="text-xs uppercase tracking-[0.4em] text-accent-teal">Epic Dreams Merch</p>
+          </div>
           <h1 className="mt-3 text-3xl font-semibold text-white">{product.title}</h1>
           <p className="mt-3 text-sm text-white/70">{product.description}</p>
           <AddToCartForm product={storeProduct} />

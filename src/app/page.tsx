@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { EmailCapture } from '@components/store/EmailCapture';
 import { displayClass } from '@lib/utils/fonts';
+import { Logo, OrganizationBadge } from '@components/ui/Logo';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -31,7 +32,13 @@ export default async function HomePage() {
       <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-black via-black to-accent-violet/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-20 md:flex-row md:items-center">
           <div className="max-w-2xl space-y-6">
-            <p className={`${displayClass} text-xs uppercase tracking-[0.6em] text-accent-teal/80`}>Epic Dreams Entertainment</p>
+            <div className="flex items-center gap-4">
+              <Logo company="epic-dreams-entertainment" variant="primary" size="lg" />
+              <div>
+                <p className={`${displayClass} text-xs uppercase tracking-[0.6em] text-accent-teal/80`}>Epic Dreams Entertainment</p>
+                <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">Official Store</p>
+              </div>
+            </div>
             <h1 className={`${displayClass} text-4xl font-semibold tracking-tight md:text-6xl`}>
               Official Merch. Limited Drops. Signed Editions.
             </h1>
@@ -52,6 +59,7 @@ export default async function HomePage() {
                 View Release
               </Link>
             </div>
+            <OrganizationBadge className="mt-2" />
           </div>
           <div className="relative h-72 w-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 md:h-96">
             <Image
