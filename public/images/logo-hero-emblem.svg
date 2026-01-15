@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Cosmic gradient for background -->
+    <radialGradient id="cosmicBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a1a3e"/>
+      <stop offset="50%" style="stop-color:#0d1b2a"/>
+      <stop offset="100%" style="stop-color:#030303"/>
+    </radialGradient>
+    <!-- Galaxy glow gradient -->
+    <radialGradient id="galaxyGlow" cx="30%" cy="70%" r="60%">
+      <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#6a4bff;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:0"/>
+    </radialGradient>
+    <!-- Cosmic infinity gradient -->
+    <linearGradient id="cosmicInfinity" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f5ff"/>
+      <stop offset="25%" style="stop-color:#6a4bff"/>
+      <stop offset="50%" style="stop-color:#ff6bff"/>
+      <stop offset="75%" style="stop-color:#ff6b35"/>
+      <stop offset="100%" style="stop-color:#f5d17a"/>
+    </linearGradient>
+    <!-- Metallic blue ring -->
+    <linearGradient id="blueRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="25%" style="stop-color:#2d5a87"/>
+      <stop offset="50%" style="stop-color:#4a90c2"/>
+      <stop offset="75%" style="stop-color:#2d5a87"/>
+      <stop offset="100%" style="stop-color:#1e3a5f"/>
+    </linearGradient>
+    <!-- Glow filter -->
+    <filter id="cosmicGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#cosmicBg)"/>
+
+  <!-- Galaxy glow effect -->
+  <circle cx="100" cy="100" r="80" fill="url(#galaxyGlow)"/>
+
+  <!-- Outer metallic ring -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="url(#blueRing)" stroke-width="6"/>
+
+  <!-- Inner ring highlight -->
+  <circle cx="100" cy="100" r="87" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <circle cx="100" cy="100" r="93" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Cosmic infinity symbol with glow -->
+  <g filter="url(#cosmicGlow)">
+    <path
+      d="M100,100
+         C75,100 55,75 55,75
+         C40,55 25,65 25,80
+         C25,95 40,110 55,110
+         C70,110 85,100 100,100
+         C115,100 130,110 145,110
+         C160,110 175,95 175,80
+         C175,65 160,55 145,75
+         C145,75 125,100 100,100"
+      fill="none"
+      stroke="url(#cosmicInfinity)"
+      stroke-width="8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </g>
+
+  <!-- Star sparkles -->
+  <circle cx="60" cy="60" r="1" fill="#ffffff" opacity="0.8"/>
+  <circle cx="140" cy="50" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="150" cy="140" r="1" fill="#ffffff" opacity="0.7"/>
+  <circle cx="45" cy="130" r="1" fill="#ffffff" opacity="0.5"/>
+  <circle cx="100" cy="40" r="1" fill="#f5d17a" opacity="0.8"/>
+</svg>

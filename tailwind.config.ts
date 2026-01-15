@@ -15,7 +15,8 @@ const config: Config = {
         accent: {
           teal: "#00f5ff",
           violet: "#6a4bff"
-        }
+        },
+        gold: "#d4af37"
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui"],
