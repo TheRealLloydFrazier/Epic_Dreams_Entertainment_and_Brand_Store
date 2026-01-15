@@ -10,6 +10,7 @@ import { getLogoPath, type LogoVariant } from '@lib/constants/brand-assets';
  * - epic-dreams-entertainment (music label & merch)
  * - epic-dreams-energy (energy & sustainability)
  * - epic-dreams-ai (AI solutions)
+ * - epic-dreams-forge (PC building & hardware)
  *
  * Each company has three logo variants:
  * - primary: Simple mark for nav, tags, labels (gold/colored infinity-in-circle)
@@ -19,7 +20,7 @@ import { getLogoPath, type LogoVariant } from '@lib/constants/brand-assets';
 
 interface LogoProps {
   /** Company ID - defaults to entertainment (current site) */
-  company?: 'epic-dreams-holding' | 'epic-dreams-entertainment' | 'epic-dreams-energy' | 'epic-dreams-ai';
+  company?: 'epic-dreams-holding' | 'epic-dreams-entertainment' | 'epic-dreams-energy' | 'epic-dreams-ai' | 'epic-dreams-forge';
   /** Logo variant to display */
   variant?: LogoVariant;
   /** Display size */
@@ -44,6 +45,7 @@ const companyNames: Record<string, string> = {
   'epic-dreams-entertainment': 'Epic Dreams Entertainment',
   'epic-dreams-energy': 'Epic Dreams Energy',
   'epic-dreams-ai': 'Epic Dreams AI',
+  'epic-dreams-forge': 'Epic Dreams Forge',
 };
 
 export function Logo({

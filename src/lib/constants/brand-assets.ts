@@ -108,6 +108,26 @@ export const AI_BRAND: BrandAsset = {
 };
 
 /**
+ * Brand assets for Epic Dreams Forge
+ * Molten gold/fire infinity with anvil aesthetic - PC building & hardware
+ */
+export const FORGE_BRAND: BrandAsset = {
+  companyId: 'epic-dreams-forge',
+  name: 'Epic Dreams Forge',
+  colorScheme: {
+    primary: '#ff6b35', // Molten orange
+    secondary: '#d4af37', // Gold
+    accent: '#1a1a1a', // Dark iron/steel
+  },
+  logos: {
+    // Using SVG placeholders - replace with PNG exports from Figma
+    primary: '/images/logos/forge-primary.svg',
+    hero: '/images/logos/forge-hero.svg',
+    embroidery: '/images/logos/forge-embroidery.svg',
+  },
+};
+
+/**
  * All brand assets indexed by company ID
  */
 export const BRAND_ASSETS: Record<string, BrandAsset> = {
@@ -115,6 +135,7 @@ export const BRAND_ASSETS: Record<string, BrandAsset> = {
   'epic-dreams-entertainment': ENTERTAINMENT_BRAND,
   'epic-dreams-energy': ENERGY_BRAND,
   'epic-dreams-ai': AI_BRAND,
+  'epic-dreams-forge': FORGE_BRAND,
 };
 
 /**

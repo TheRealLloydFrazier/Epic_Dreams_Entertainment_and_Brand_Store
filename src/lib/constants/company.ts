@@ -101,6 +101,24 @@ export const SUBSIDIARIES: CompanyInfo[] = [
     },
     parentId: 'epic-dreams-holding',
   },
+  {
+    id: 'epic-dreams-forge',
+    name: 'Epic Dreams Forge',
+    legalName: 'Epic Dreams Forge LLC',
+    type: 'subsidiary',
+    status: 'active',
+    description: 'Custom PC building and hardware solutions crafted with precision. Epic Dreams Forge creates high-performance gaming rigs, workstations, and custom builds that bring your computing dreams to life.',
+    mission: 'To forge legendary machines that empower creators, gamers, and professionals to achieve their full potential.',
+    tagline: 'Where Dreams Are Forged',
+    industry: 'Computer Hardware & Custom PC Building',
+    website: 'https://forge.epicdreams.com',
+    socials: {
+      youtube: 'https://youtube.com/@epicdreamsforge',
+      twitter: 'https://twitter.com/epicdreamsforge',
+      instagram: 'https://instagram.com/epicdreamsforge',
+    },
+    parentId: 'epic-dreams-holding',
+  },
 ];
 
 // Full organization structure
