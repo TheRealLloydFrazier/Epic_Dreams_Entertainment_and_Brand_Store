@@ -169,8 +169,6 @@ Each track is a piece of my journey—crafted to connect with yours. Welcome to 
     });
   }
 
-  const artist = kellyLayton;
-
   const products = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     const tee = await tx.product.create({
       data: {
@@ -405,19 +403,37 @@ Each track is a piece of my journey—crafted to connect with yours. Welcome to 
       });
     }
 
-    await prisma.productArtist.upsert({
-      where: {
-        productId_artistId: {
+    // Determine which artists to associate with this product
+    // Artist-specific merch (like album posters) should only be associated with that artist
+    // Generic Epic Dreams merch should be associated with all artists
+    let artistsToAssociate: typeof kellyLayton[] = [];
+
+    if (product.slug.includes('empty-chair-blues')) {
+      // Kelly Layton's album merchandise
+      artistsToAssociate = [kellyLayton];
+    } else if (product.slug.includes('windows-to-heaven')) {
+      // Lloyd Frazier's album merchandise
+      artistsToAssociate = [lloydFrazier];
+    } else {
+      // Generic Epic Dreams merchandise - associate with all artists
+      artistsToAssociate = [kellyLayton, lloydFrazier];
+    }
+
+    for (const artistToAssociate of artistsToAssociate) {
+      await prisma.productArtist.upsert({
+        where: {
+          productId_artistId: {
+            productId: product.id,
+            artistId: artistToAssociate.id
+          }
+        },
+        create: {
           productId: product.id,
-          artistId: artist.id
-        }
-      },
-      create: {
-        productId: product.id,
-        artistId: artist.id
-      },
-      update: {}
-    });
+          artistId: artistToAssociate.id
+        },
+        update: {}
+      });
+    }
   }
 
   await prisma.discount.createMany({
