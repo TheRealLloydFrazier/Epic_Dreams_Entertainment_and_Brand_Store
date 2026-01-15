@@ -13,6 +13,7 @@
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio",
     "db:seed": "tsx prisma/seed.ts",
+    "db:add-spotify-embed": "tsx prisma/add-spotify-embed.ts",
     "db:verify": "node scripts/verify-db-connection.js",
     "postbuild": "prisma db push && next-sitemap"
   },
