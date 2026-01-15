@@ -6,6 +6,7 @@ import { ShoppingBag, Menu } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@lib/utils/styles';
 import { useCart } from '@lib/hooks/use-cart';
+import { Logo } from '@components/ui/Logo';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -24,8 +25,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-white/10">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-center gap-2 text-lg font-semibold uppercase tracking-[0.2em]">
-          Epic Dreams
+        <Link href="/" className="flex items-center">
+          <Logo size="sm" />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
