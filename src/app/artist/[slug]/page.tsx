@@ -2,8 +2,19 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { prisma } from '@lib/db/prisma';
 import Link from 'next/link';
+import { SpotifyEmbed } from '@components/ui/SpotifyEmbed';
+import { Logo } from '@components/ui/Logo';
 
 export const revalidate = 120;
+
+interface ArtistSocials {
+  spotify?: string;
+  instagram?: string;
+  twitter?: string;
+  youtube?: string;
+  tiktok?: string;
+  website?: string;
+}
 
 export default async function ArtistPage({ params }: { params: { slug: string } }) {
   const artist = await prisma.artist.findUnique({
@@ -19,22 +30,37 @@ export default async function ArtistPage({ params }: { params: { slug: string } 
   });
   if (!artist) return notFound();
 
+  // Parse socials JSON
+  const socials = (artist.socials as ArtistSocials) || {};
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
       <div className="grid gap-10 md:grid-cols-[320px,1fr]">
         <div className="space-y-6">
           <div className="relative h-80 overflow-hidden rounded-3xl border border-white/10">
             <Image
-              src={artist.heroImage || '/images/placeholder-artist.jpg'}
+              src={artist.heroImage || '/images/placeholder-artist.svg'}
               alt={artist.name}
               fill
               className="object-cover"
             />
           </div>
           <div>
+            <div className="flex items-center gap-2 mb-2">
+              <Logo company="epic-dreams-entertainment" variant="primary" size="xs" />
+              <p className="text-xs uppercase tracking-[0.3em] text-accent-teal">Epic Dreams Artist</p>
+            </div>
             <h1 className="text-3xl font-semibold text-white">{artist.name}</h1>
             <p className="mt-3 text-sm text-white/70 whitespace-pre-line">{artist.bio}</p>
           </div>
+
+          {/* Spotify Player */}
+          {socials.spotify && (
+            <div className="pt-4">
+              <h3 className="text-xs uppercase tracking-[0.3em] text-white/60 mb-3">Listen on Spotify</h3>
+              <SpotifyEmbed spotifyId={socials.spotify} type="artist" height={352} />
+            </div>
+          )}
         </div>
         <div className="space-y-10">
           <div>
