@@ -25,11 +25,18 @@ async function main() {
     data: {
       name: 'Kelly Layton',
       slug: 'kelly-layton',
-      bio: 'Kelly Layton crafts nocturnal dreamscapes that blend synthwave and neo-soul. This is a placeholder bio for demo purposes.',
+      bio: 'Kelly Layton crafts nocturnal dreamscapes that blend synthwave and neo-soul. Born in Atlanta and raised on a steady diet of 80s synth-pop and contemporary R&B, Kelly has carved out a unique sonic space that feels simultaneously retro and futuristic.\n\nWith influences ranging from Vangelis to Frank Ocean, Kelly\'s productions feature lush analog synthesizers, soulful vocal arrangements, and beats that make you want to cruise through neon-lit city streets at 2am.\n\nSince signing with Epic Dreams Entertainment, Kelly has released two critically acclaimed EPs and collaborated with producers across the globe. When not in the studio, you can find Kelly hosting late-night listening sessions and mentoring upcoming artists in the Atlanta music scene.',
       socials: {
-        instagram: 'https://instagram.com/kellylayton',
+        // Music Platforms
+        spotify: 'https://open.spotify.com/artist/kellylayton',
+        appleMusic: 'https://music.apple.com/artist/kellylayton',
+        soundcloud: 'https://soundcloud.com/kellylayton',
         youtube: 'https://youtube.com/@kellylayton',
-        tiktok: 'https://tiktok.com/@kellylayton'
+        bandcamp: 'https://kellylayton.bandcamp.com',
+        // Social Media
+        instagram: 'https://instagram.com/kellylayton',
+        tiktok: 'https://tiktok.com/@kellylayton',
+        twitter: 'https://twitter.com/kellylayton'
       },
       heroImage: 'https://images.unsplash.com/photo-1521337580396-0259d59d6b47?auto=format&fit=crop&w=1600&q=80'
     }
