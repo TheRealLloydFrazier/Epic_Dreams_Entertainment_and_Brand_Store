@@ -14,6 +14,9 @@ Large background images for hero sections, about pages, and marketing materials.
 | `energy-electric.png` | Blue electric infinity with HUD | Energy subsidiary hero |
 | `ai-neural.png` | Blue neural infinity with circuit ring | AI subsidiary hero |
 | `entertainment-cosmic.png` | Purple cosmic infinity in silver ring | Entertainment subsidiary hero |
+| `cosmic-particle-trail.png` | Gold/blue infinity with particle trail | Dynamic hero, transformation |
+| `lunar-boardroom.png` | Moon/starfield infinity in space boardroom | Space themes, corporate sci-fi |
+| `stone-star-rain.png` | Stone/star duality infinity with rain | Duality themes, artistic pages |
 
 ## Recommended Specifications
 

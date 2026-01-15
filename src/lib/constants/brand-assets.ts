@@ -195,7 +195,10 @@ export type MarketingImageType =
   | 'boardroom-cosmic'  // Gold infinity in futuristic boardroom
   | 'energy-electric'   // Blue electric infinity (Energy brand)
   | 'ai-neural'         // Neural network infinity (AI brand)
-  | 'entertainment-cosmic'; // Purple cosmic infinity (Entertainment brand)
+  | 'entertainment-cosmic' // Purple cosmic infinity (Entertainment brand)
+  | 'cosmic-particle-trail' // Gold/blue infinity with particle disintegration
+  | 'lunar-boardroom'   // Moon/starfield infinity in space boardroom
+  | 'stone-star-rain';  // Stone/star duality infinity with rain and embers
 
 export interface MarketingImage {
   id: MarketingImageType;
@@ -261,6 +264,27 @@ export const MARKETING_IMAGES: MarketingImage[] = [
     description: 'Purple/pink cosmic infinity in silver ring with galaxy background',
     suggestedUse: ['Entertainment subsidiary hero', 'Music/merch pages'],
     path: '/images/marketing/entertainment-cosmic.png',
+  },
+  {
+    id: 'cosmic-particle-trail',
+    name: 'Cosmic Particle Trail',
+    description: 'Gold/orange cosmic infinity with blue particle trail disintegration effect',
+    suggestedUse: ['Dynamic hero sections', 'Transformation themes', 'About pages'],
+    path: '/images/marketing/cosmic-particle-trail.png',
+  },
+  {
+    id: 'lunar-boardroom',
+    name: 'Lunar Boardroom',
+    description: 'Moon/starfield infinity in futuristic space boardroom with galaxy views',
+    suggestedUse: ['Space/exploration themes', 'Corporate sci-fi', 'Investor materials'],
+    path: '/images/marketing/lunar-boardroom.png',
+  },
+  {
+    id: 'stone-star-rain',
+    name: 'Stone & Stars',
+    description: 'Stone/star duality infinity with rain drops and ember sparks, moody atmosphere',
+    suggestedUse: ['Duality themes', 'Creation/transformation', 'Artistic pages'],
+    path: '/images/marketing/stone-star-rain.png',
   },
 ];
 
