@@ -21,17 +21,60 @@ async function main() {
   await prisma.adminSession.deleteMany();
   await prisma.adminUser.deleteMany();
 
-  const artist = await prisma.artist.create({
+  // Create Lloyd Frazier artist
+  const lloydFrazier = await prisma.artist.create({
+    data: {
+      name: 'Lloyd Frazier',
+      slug: 'lloyd-frazier',
+      bio: `I'm Lloyd Frazier—an Author, Musician, Singer, Songwriter, Content Creator, and Businessman. I'm the President & Chief Executive Officer of Epic Dreams Asset Management and Holding Company, Incorporated, and the Owner of Epic Dreams Entertainment LLC—a creative home where music, storytelling, and innovation meet.
+
+I've never believed in "factory-made" art. I write my lyrics. I write my music. And I use the latest technology to help bring each piece to life—not to replace the soul of the work, but to amplify it. For me, technology is a paintbrush, not the painter. The message still has to be real. The melody still has to carry weight. The words still have to mean something when the world gets quiet.
+
+My creative process doesn't follow one clock. Some songs come like lightning—whole and complete, as if they were waiting on the other side of a door and finally stepped through. Others take the long road: shaped by experience, refined through seasons of living, built line by line until the story is honest enough to stand on its own.
+
+I'm not chasing noise. I'm chasing impact.
+
+Whether I'm writing music or building a business, my mission stays the same: create with intention, lead with integrity, and leave something behind that makes people feel stronger, seen, and more hopeful than they did before they pressed play. Each track is a piece of my journey—crafted to connect with yours.
+
+Welcome to Epic Dreams Entertainment—where the work is personal, the vision is bold, and the dream is always bigger than yesterday.`,
+      socials: {
+        appleMusic: 'https://music.apple.com/us/artist/lloyd-frazier/1744747477',
+        spotify: 'https://open.spotify.com/artist/2KXWFz3CD7BXxrPfTk0xTw',
+        amazonMusic: 'https://music.amazon.com/artists/B0D3BKLVGJ/lloyd-frazier',
+        pandora: 'https://www.pandora.com/artist/lloyd-frazier/AR7dqnxpmn3tXlk',
+        youtube: 'https://www.youtube.com/@TheRealLloydFrazier',
+        twitter: 'https://x.com/lloydfrazier',
+        facebook: 'https://www.facebook.com/frazlloy',
+        instagram: 'https://www.instagram.com/thereallloydfrazier/',
+        tiktok: 'https://www.tiktok.com/@lloydfrazier0417'
+      },
+      heroImage: null
+    }
+  });
+
+  // Create Kelly Layton artist
+  const kellyLayton = await prisma.artist.create({
     data: {
       name: 'Kelly Layton',
       slug: 'kelly-layton',
-      bio: 'Kelly Layton crafts nocturnal dreamscapes that blend synthwave and neo-soul. This is a placeholder bio for demo purposes.',
+      bio: `Kelly Layton is a vocalist and songwriter with a sound that lives at the crossroads of blues grit, rock edge, country color, and singer-songwriter honesty. With releases credited to Epic Dreams Entertainment LLC, Kelly's catalog is built for listeners who like their music heartfelt, lived-in, and unafraid to tell the truth.
+
+Her 2025 album Empty Chair Blues delivers a full-length statement—eight tracks that lean into mood, story, and emotional weight, showing an artist who can hold a room with voice alone and still leave space for the song to breathe.
+
+Around the album, Kelly's singles highlight her range—from reflective singer-songwriter cuts like "Darlin'", to rock-driven moments like "Tide," to country-leaning storytelling in "Garage Memories."
+
+Whether she's singing into the storm or sitting with the ache of an empty chair, Kelly Layton's music carries one clear signature: emotional honesty with a backbone—songs made to be felt, not just heard.`,
       socials: {
-        instagram: 'https://instagram.com/kellylayton',
-        youtube: 'https://youtube.com/@kellylayton',
-        tiktok: 'https://tiktok.com/@kellylayton'
+        appleMusic: 'https://music.apple.com/us/artist/kelly-layton/1812203563',
+        spotify: 'https://open.spotify.com/artist/5ioYBEItbcorbNdifaLhxb',
+        amazonMusic: 'https://music.amazon.com/artists/B0F7FTRG8J/kelly-layton',
+        youtube: 'https://www.youtube.com/channel/UC1N439_MZjw9NFjGSTkKsCA',
+        twitter: 'https://x.com/KellyLayto91021',
+        facebook: 'https://www.facebook.com/kelly.dawn.layton.2025',
+        instagram: 'https://www.instagram.com/feralhoneybadger1916',
+        tiktok: 'https://www.tiktok.com/@feralhoneybadger'
       },
-      heroImage: 'https://images.unsplash.com/photo-1521337580396-0259d59d6b47?auto=format&fit=crop&w=1600&q=80'
+      heroImage: null
     }
   });
 
@@ -39,18 +82,24 @@ async function main() {
     data: {
       title: 'Empty Chair Blues',
       slug: 'empty-chair-blues',
-      releaseDate: new Date('2024-05-01T00:00:00Z'),
+      releaseDate: new Date('2025-01-01T00:00:00Z'),
       coverImage: 'https://images.unsplash.com/photo-1485579149621-3123dd979885?auto=format&fit=crop&w=1200&q=80',
       tracks: [
         { title: 'Empty Chair Blues', duration: '3:42' },
-        { title: 'Neon Harbor', duration: '4:11' },
-        { title: 'Dream Logic', duration: '3:57' }
+        { title: 'Darlin\'', duration: '3:55' },
+        { title: 'Tide', duration: '4:11' },
+        { title: 'Garage Memories', duration: '4:28' },
+        { title: 'Storm Singer', duration: '3:38' },
+        { title: 'Backbone', duration: '3:45' },
+        { title: 'Heart Forward', duration: '4:02' },
+        { title: 'Honest Ache', duration: '3:51' }
       ],
       links: {
-        spotify: 'https://open.spotify.com',
-        appleMusic: 'https://music.apple.com'
+        spotify: 'https://open.spotify.com/artist/5ioYBEItbcorbNdifaLhxb',
+        appleMusic: 'https://music.apple.com/us/artist/kelly-layton/1812203563',
+        amazonMusic: 'https://music.amazon.com/artists/B0F7FTRG8J/kelly-layton'
       },
-      artistId: artist.id
+      artistId: kellyLayton.id
     }
   });
 
@@ -288,16 +337,30 @@ async function main() {
       });
     }
 
+    // Associate products with both artists
     await prisma.productArtist.upsert({
       where: {
         productId_artistId: {
           productId: product.id,
-          artistId: artist.id
+          artistId: lloydFrazier.id
         }
       },
       create: {
         productId: product.id,
-        artistId: artist.id
+        artistId: lloydFrazier.id
+      },
+      update: {}
+    });
+    await prisma.productArtist.upsert({
+      where: {
+        productId_artistId: {
+          productId: product.id,
+          artistId: kellyLayton.id
+        }
+      },
+      create: {
+        productId: product.id,
+        artistId: kellyLayton.id
       },
       update: {}
     });

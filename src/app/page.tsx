@@ -36,7 +36,7 @@ export default async function HomePage() {
               Official Merch. Limited Drops. Signed Editions.
             </h1>
             <p className="text-lg text-white/70">
-              Gear up with bold silhouettes and exclusive releases from Kelly Layton and the Epic Dreams roster.
+              Gear up with bold silhouettes and exclusive releases from Lloyd Frazier, Kelly Layton, and the Epic Dreams roster.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
