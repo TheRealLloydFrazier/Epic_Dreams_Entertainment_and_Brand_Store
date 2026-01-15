@@ -155,19 +155,17 @@ Each track is a piece of my journey—crafted to connect with yours. Welcome to 
   ];
 
   // Create all Lloyd Frazier releases
-  for (const releaseData of lloydReleases) {
-    await prisma.release.create({
-      data: {
-        title: releaseData.title,
-        slug: releaseData.slug,
-        releaseDate: releaseData.releaseDate,
-        coverImage: releaseData.coverImage || 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80',
-        tracks: releaseData.tracks,
-        links: releaseData.links || { youtube: 'https://youtube.com/@TheRealLloydFrazier', spotify: 'https://open.spotify.com' },
-        artistId: lloydFrazier.id
-      }
-    });
-  }
+  await prisma.release.createMany({
+    data: lloydReleases.map((releaseData) => ({
+      title: releaseData.title,
+      slug: releaseData.slug,
+      releaseDate: releaseData.releaseDate,
+      coverImage: releaseData.coverImage || 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1200&q=80',
+      tracks: releaseData.tracks,
+      links: releaseData.links || { youtube: 'https://youtube.com/@TheRealLloydFrazier', spotify: 'https://open.spotify.com' },
+      artistId: lloydFrazier.id
+    }))
+  });
 
   const artist = kellyLayton;
 
