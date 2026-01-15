@@ -158,3 +158,103 @@ export const EXPECTED_LOGO_FILES = [
   'ai-hero.png',
   'ai-embroidery.png',
 ] as const;
+
+/**
+ * Marketing Hero Images
+ *
+ * Large background images for hero sections, about pages, marketing materials.
+ * These are full scene renders featuring the infinity symbol in various contexts.
+ * Save to /public/images/marketing/
+ */
+export type MarketingImageType =
+  | 'forge-molten'      // Molten rock infinity with dripping gold/lava
+  | 'mobile-hologram'   // Holographic infinity emerging from smartphone
+  | 'marble-monument'   // Marble-to-crystal infinity in metal ring
+  | 'forge-anvil'       // Gold infinity with anvil + PC component
+  | 'boardroom-cosmic'  // Gold infinity in futuristic boardroom
+  | 'energy-electric'   // Blue electric infinity (Energy brand)
+  | 'ai-neural'         // Neural network infinity (AI brand)
+  | 'entertainment-cosmic'; // Purple cosmic infinity (Entertainment brand)
+
+export interface MarketingImage {
+  id: MarketingImageType;
+  name: string;
+  description: string;
+  suggestedUse: string[];
+  path: string;
+}
+
+export const MARKETING_IMAGES: MarketingImage[] = [
+  {
+    id: 'forge-molten',
+    name: 'Molten Forge',
+    description: 'Infinity symbol carved in molten rock with dripping gold/magma, cosmic fire background',
+    suggestedUse: ['Hero sections', 'About page', 'Creation/building themes'],
+    path: '/images/marketing/forge-molten.png',
+  },
+  {
+    id: 'mobile-hologram',
+    name: 'Mobile Hologram',
+    description: 'Holographic gold infinity emerging from smartphone with purple/gold energy effects',
+    suggestedUse: ['App marketing', 'Digital services', 'Tech products'],
+    path: '/images/marketing/mobile-hologram.png',
+  },
+  {
+    id: 'marble-monument',
+    name: 'Marble Monument',
+    description: 'Marble-to-crystal infinity symbol in massive metallic ring, futuristic setting',
+    suggestedUse: ['Holding company pages', 'Investor materials', 'Corporate presentations'],
+    path: '/images/marketing/marble-monument.png',
+  },
+  {
+    id: 'forge-anvil',
+    name: 'Tech Forge',
+    description: 'Gold cosmic infinity with anvil and PC motherboard, creation/building theme',
+    suggestedUse: ['PC building services', 'Hardware subsidiary', 'Tech creation'],
+    path: '/images/marketing/forge-anvil.png',
+  },
+  {
+    id: 'boardroom-cosmic',
+    name: 'Cosmic Boardroom',
+    description: 'Gold infinity in futuristic boardroom with galaxy view and holographic displays',
+    suggestedUse: ['Investor pages', 'Corporate about', 'Leadership sections'],
+    path: '/images/marketing/boardroom-cosmic.png',
+  },
+  {
+    id: 'energy-electric',
+    name: 'Electric Energy',
+    description: 'Blue electric infinity with HUD elements and energy effects',
+    suggestedUse: ['Energy subsidiary hero', 'Sustainability pages'],
+    path: '/images/marketing/energy-electric.png',
+  },
+  {
+    id: 'ai-neural',
+    name: 'Neural Network',
+    description: 'Blue neural infinity with circuit ring and tech aesthetics',
+    suggestedUse: ['AI subsidiary hero', 'Technology pages'],
+    path: '/images/marketing/ai-neural.png',
+  },
+  {
+    id: 'entertainment-cosmic',
+    name: 'Cosmic Entertainment',
+    description: 'Purple/pink cosmic infinity in silver ring with galaxy background',
+    suggestedUse: ['Entertainment subsidiary hero', 'Music/merch pages'],
+    path: '/images/marketing/entertainment-cosmic.png',
+  },
+];
+
+/**
+ * Get marketing image by ID
+ */
+export function getMarketingImage(id: MarketingImageType): MarketingImage | undefined {
+  return MARKETING_IMAGES.find(img => img.id === id);
+}
+
+/**
+ * Get marketing images by suggested use
+ */
+export function getMarketingImagesByUse(use: string): MarketingImage[] {
+  return MARKETING_IMAGES.filter(img =>
+    img.suggestedUse.some(u => u.toLowerCase().includes(use.toLowerCase()))
+  );
+}
