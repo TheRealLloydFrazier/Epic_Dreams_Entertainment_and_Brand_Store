@@ -59,7 +59,8 @@ Each track is a piece of my journey—crafted to connect with yours. Welcome to 
         youtube: 'https://youtube.com/@TheRealLloydFrazier',
         spotify: 'https://open.spotify.com/artist/lloydrazier',
         appleMusic: 'https://music.apple.com/artist/lloyd-frazier',
-        instagram: 'https://instagram.com/therealloydfrazier'
+        instagram: 'https://instagram.com/therealloydfrazier',
+        spotifyEmbed: 'https://open.spotify.com/embed/artist/2KXWFz3CD7BXxrPfTk0xTw?utm_source=generator'
       },
       heroImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=80'
     }
