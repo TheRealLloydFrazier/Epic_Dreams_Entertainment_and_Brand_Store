@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="cosmicBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a1a3e"/>
+      <stop offset="100%" style="stop-color:#030303"/>
+    </radialGradient>
+    <linearGradient id="goldCosmic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d4af37"/>
+      <stop offset="50%" style="stop-color:#f5d17a"/>
+      <stop offset="100%" style="stop-color:#b8962e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#cosmicBg)"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#d4af37" stroke-width="4"/>
+  <g filter="url(#glow)">
+    <path d="M100,100 C75,100 55,75 55,75 C40,55 25,65 25,80 C25,95 40,110 55,110 C70,110 85,100 100,100 C115,100 130,110 145,110 C160,110 175,95 175,80 C175,65 160,55 145,75 C145,75 125,100 100,100"
+      fill="none" stroke="url(#goldCosmic)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <circle cx="60" cy="60" r="1" fill="#f5d17a" opacity="0.8"/>
+  <circle cx="140" cy="50" r="1.5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="150" cy="140" r="1" fill="#d4af37" opacity="0.7"/>
+</svg>

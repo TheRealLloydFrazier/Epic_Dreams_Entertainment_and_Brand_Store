@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <radialGradient id="energyBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#0a1a2e"/>
+      <stop offset="100%" style="stop-color:#030303"/>
+    </radialGradient>
+    <linearGradient id="electricBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f5ff"/>
+      <stop offset="50%" style="stop-color:#0066ff"/>
+      <stop offset="100%" style="stop-color:#00f5ff"/>
+    </linearGradient>
+    <filter id="electricGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="100" cy="100" r="95" fill="url(#energyBg)"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#0066ff" stroke-width="4"/>
+  <g filter="url(#electricGlow)">
+    <path d="M100,100 C75,100 55,75 55,75 C40,55 25,65 25,80 C25,95 40,110 55,110 C70,110 85,100 100,100 C115,100 130,110 145,110 C160,110 175,95 175,80 C175,65 160,55 145,75 C145,75 125,100 100,100"
+      fill="none" stroke="url(#electricBlue)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <circle cx="50" cy="70" r="1" fill="#00f5ff" opacity="0.8"/>
+  <circle cx="150" cy="60" r="1.5" fill="#00f5ff" opacity="0.6"/>
+</svg>

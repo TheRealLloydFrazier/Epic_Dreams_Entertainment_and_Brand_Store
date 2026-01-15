@@ -68,6 +68,23 @@ export const SUBSIDIARIES: CompanyInfo[] = [
     parentId: 'epic-dreams-holding',
   },
   {
+    id: 'epic-dreams-energy',
+    name: 'Epic Dreams Energy',
+    legalName: 'Epic Dreams Energy LLC',
+    type: 'subsidiary',
+    status: 'active',
+    description: 'Powering the future with innovative energy solutions. Epic Dreams Energy focuses on sustainable energy investments, clean technology, and next-generation power infrastructure.',
+    mission: 'To accelerate the transition to sustainable energy through strategic investments and innovation.',
+    tagline: 'Powering Tomorrow\'s Dreams',
+    industry: 'Energy & Sustainability',
+    website: 'https://energy.epicdreams.com',
+    socials: {
+      linkedin: 'https://linkedin.com/company/epic-dreams-energy',
+      twitter: 'https://twitter.com/epicdreamsenergy',
+    },
+    parentId: 'epic-dreams-holding',
+  },
+  {
     id: 'epic-dreams-ai',
     name: 'Epic Dreams AI Solutions',
     legalName: 'Epic Dreams AI Solutions LLC',
