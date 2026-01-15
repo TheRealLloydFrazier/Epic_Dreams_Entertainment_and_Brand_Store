@@ -35,6 +35,20 @@ export default async function ArtistPage({ params }: { params: { slug: string } 
             <h1 className="text-3xl font-semibold text-white">{artist.name}</h1>
             <p className="mt-3 text-sm text-white/70 whitespace-pre-line">{artist.bio}</p>
           </div>
+          {(artist.socials as { spotify?: string } | null)?.spotify && (
+            <div className="mt-6">
+              <iframe
+                style={{ borderRadius: '12px' }}
+                src={`https://open.spotify.com/embed/artist/${(artist.socials as { spotify: string }).spotify}?utm_source=generator`}
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allowFullScreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              />
+            </div>
+          )}
         </div>
         <div className="space-y-10">
           <div>

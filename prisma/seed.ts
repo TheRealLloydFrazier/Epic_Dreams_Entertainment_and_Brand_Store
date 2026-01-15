@@ -29,7 +29,8 @@ async function main() {
       socials: {
         instagram: 'https://instagram.com/kellylayton',
         youtube: 'https://youtube.com/@kellylayton',
-        tiktok: 'https://tiktok.com/@kellylayton'
+        tiktok: 'https://tiktok.com/@kellylayton',
+        spotify: '5ioYBEItbcorbNdifaLhxb'
       },
       heroImage: 'https://images.unsplash.com/photo-1521337580396-0259d59d6b47?auto=format&fit=crop&w=1600&q=80'
     }
