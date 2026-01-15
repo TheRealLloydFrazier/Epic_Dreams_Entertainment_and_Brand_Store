@@ -30,9 +30,23 @@ async function main() {
         instagram: 'https://instagram.com/kellylayton',
         youtube: 'https://youtube.com/@kellylayton',
         tiktok: 'https://tiktok.com/@kellylayton',
-        spotify: '5ioYBEItbcorbNdifaLhxb'
+        spotify: '5ioYBEItbcorbNdifaLhxb',
+        appleMusic: 'https://music.apple.com/us/artist/kelly-layton/1812203563'
       },
       heroImage: 'https://images.unsplash.com/photo-1521337580396-0259d59d6b47?auto=format&fit=crop&w=1600&q=80'
+    }
+  });
+
+  const lloydFrazier = await prisma.artist.create({
+    data: {
+      name: 'Lloyd Frazier',
+      slug: 'lloyd-frazier',
+      bio: 'Lloyd Frazier brings soulful melodies and heartfelt lyrics to the Epic Dreams roster. This is a placeholder bio for demo purposes.',
+      socials: {
+        spotify: '2KXWFz3CD7BXxrPfTk0xTw',
+        appleMusic: 'https://music.apple.com/us/artist/lloyd-frazier/1744747477'
+      },
+      heroImage: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=1600&q=80'
     }
   });
 
