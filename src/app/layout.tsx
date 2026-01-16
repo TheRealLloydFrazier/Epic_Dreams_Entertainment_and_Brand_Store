@@ -5,6 +5,7 @@ import { Footer } from '@components/layout/Footer';
 import { Header } from '@components/layout/Header';
 import { fontSans, fontDisplay } from '@lib/utils/fonts';
 import { Providers } from '@components/layout/Providers';
+import { ConvAIWidget } from '@components/chat/ConvAIWidget';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          <ConvAIWidget />
         </Providers>
       </body>
     </html>
