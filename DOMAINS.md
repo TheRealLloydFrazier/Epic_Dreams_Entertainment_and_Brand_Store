@@ -1,6 +1,6 @@
 # Epic Dreams Domain Portfolio
 
-This document tracks all domain assets owned by Epic Dreams Asset Management and Holding Company Incorporated.
+This document tracks all domain assets owned by Epic Dreams Entertainment and Brand Store.
 
 ## Owned Domains
 
@@ -12,7 +12,7 @@ This document tracks all domain assets owned by Epic Dreams Asset Management and
 ## Domain Details
 
 ### epicdreamsassetmanagement.com
-- **Purpose:** Primary domain for Epic Dreams Asset Management and Holding Company
+- **Purpose:** Primary domain for Epic Dreams Entertainment and Brand Store
 - **Deployment:** Vercel
 - **DNS Configuration:** See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for DNS setup instructions
 

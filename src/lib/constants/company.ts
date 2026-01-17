@@ -1,8 +1,8 @@
 /**
  * Epic Dreams Organization Structure
  *
- * Epic Dreams Asset Management and Holding Company, Incorporated
- * is the parent holding company that owns all Epic Dreams subsidiaries.
+ * Epic Dreams Entertainment and Brand Store
+ * is the parent company that owns all Epic Dreams subsidiaries.
  */
 
 export interface CompanyInfo {
@@ -32,14 +32,14 @@ export interface CompanyInfo {
 export const HOLDING_COMPANY: CompanyInfo = {
   id: 'epic-dreams-holding',
   name: 'Epic Dreams',
-  legalName: 'Epic Dreams Asset Management and Holding Company, Incorporated',
+  legalName: 'Epic Dreams Entertainment and Brand Store',
   type: 'holding',
   status: 'active',
-  description: 'Epic Dreams Asset Management and Holding Company, Incorporated is the heart of the Epic Dreams Organization. We manage and oversee a diverse portfolio of innovative companies across entertainment, technology, and creative industries.',
+  description: 'Epic Dreams Entertainment and Brand Store is the heart of the Epic Dreams Organization. We manage and oversee a diverse portfolio of innovative companies across entertainment, technology, and creative industries.',
   mission: 'To build and nurture transformative companies that turn dreams into reality through innovation, creativity, and strategic investment.',
   vision: 'To be the premier holding company for visionary enterprises that shape culture, technology, and human experience.',
   tagline: 'Where Dreams Become Reality',
-  industry: 'Asset Management & Holding Company',
+  industry: 'Entertainment & Brand Store',
   website: 'https://epicdreams.com',
   socials: {
     instagram: 'https://instagram.com/epicdreamsholding',
