@@ -25,7 +25,7 @@ const companyLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-accent-gold/20 bg-black/90">
+    <footer className="border-t border-accent-violet/20 bg-black/90">
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
@@ -37,8 +37,8 @@ export function Footer() {
               Epic Dreams Entertainment is a forward-thinking label building immersive worlds through music, design, and story.
             </p>
             {/* Part of organization badge */}
-            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent-gold/30 bg-accent-gold/5 px-3 py-1.5">
-              <span className="text-sm text-accent-gold">∞</span>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent-violet/30 bg-accent-violet/5 px-3 py-1.5">
+              <span className="text-sm text-accent-violet">∞</span>
               <span className="text-[10px] text-white/50">Part of Epic Dreams Organization</span>
             </div>
           </div>

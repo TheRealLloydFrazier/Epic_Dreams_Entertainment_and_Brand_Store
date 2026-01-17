@@ -131,7 +131,7 @@ export async function StoreGrid({
               key={p}
               href={{ pathname: '/store', query: { ...searchParams, page: p } }}
               className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.3em] ${
-                p === page ? 'border-accent-gold text-accent-gold' : 'border-white/20 text-white/60 hover:border-accent-gold hover:text-white'
+                p === page ? 'border-accent-violet text-accent-violet' : 'border-white/20 text-white/60 hover:border-accent-violet hover:text-white'
               }`}
             >
               {p}

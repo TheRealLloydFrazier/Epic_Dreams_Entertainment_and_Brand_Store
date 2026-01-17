@@ -10,13 +10,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#030303",
+        background: "#0a0a1a",
         foreground: "#f5f5f5",
         accent: {
+          // Primary cosmic purple/violet palette
+          violet: "#a78bfa",
+          "violet-light": "#c4b5fd",
+          "violet-dark": "#7c3aed",
+          purple: "#8b5cf6",
+          cosmic: "#1e1b4b",
+          "cosmic-light": "#312e81",
+          // Secondary accent (orange/amber for highlights)
+          ember: "#f97316",
+          "ember-light": "#fb923c",
+          // Legacy gold for merchandise branding only
           gold: "#d4af37",
-          "gold-light": "#f5d280",
-          violet: "#8b5cf6",
-          cosmic: "#1e1b4b"
+          "gold-light": "#f5d280"
         }
       },
       fontFamily: {

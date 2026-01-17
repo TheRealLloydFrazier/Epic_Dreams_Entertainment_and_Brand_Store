@@ -7,15 +7,15 @@ export default function AboutPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-16">
-      <p className="text-xs uppercase tracking-[0.3em] text-accent-gold">About</p>
+      <p className="text-xs uppercase tracking-[0.3em] text-accent-violet">About</p>
       <h1 className={`${displayClass} mt-3 text-4xl`}>Epic Dreams Entertainment</h1>
 
       {/* Part of Epic Dreams Organization badge */}
       <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
-        <span className="text-lg text-accent-gold">∞</span>
+        <span className="text-lg text-accent-violet">∞</span>
         <span className="text-xs text-white/60">
           A subsidiary of{' '}
-          <Link href="/company" className="text-white/80 underline decoration-accent-gold/50 underline-offset-2 hover:text-white">
+          <Link href="/company" className="text-white/80 underline decoration-accent-violet/50 underline-offset-2 hover:text-white">
             {HOLDING_COMPANY.name}
           </Link>
         </span>
@@ -34,7 +34,7 @@ export default function AboutPage() {
       {/* Organization Section */}
       <div className="mt-12 rounded-xl border border-white/10 bg-white/5 p-6">
         <div className="flex items-center gap-3">
-          <span className="text-3xl text-accent-gold/60">∞</span>
+          <span className="text-3xl text-accent-violet/60">∞</span>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-white/40">Part of the</p>
             <p className={`${displayClass} text-lg`}>Epic Dreams Organization</p>
@@ -46,7 +46,7 @@ export default function AboutPage() {
         </p>
         <Link
           href="/company"
-          className="mt-4 inline-flex items-center gap-2 text-sm text-accent-gold transition-colors hover:text-accent-gold/80"
+          className="mt-4 inline-flex items-center gap-2 text-sm text-accent-violet transition-colors hover:text-accent-violet/80"
         >
           <span>Explore Our Organization</span>
           <span>→</span>

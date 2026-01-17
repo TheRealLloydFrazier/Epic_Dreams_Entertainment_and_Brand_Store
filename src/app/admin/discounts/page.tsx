@@ -30,7 +30,7 @@ export default async function AdminDiscountsPage() {
         {discounts.map((discount) => (
           <div key={discount.id} className="rounded-3xl border border-white/10 bg-white/5 p-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <span className="rounded-full border border-white/20 px-3 py-1 text-xs uppercase tracking-[0.3em] text-accent-gold">
+              <span className="rounded-full border border-white/20 px-3 py-1 text-xs uppercase tracking-[0.3em] text-accent-violet">
                 {discount.code}
               </span>
               <p className="text-sm text-white/70">

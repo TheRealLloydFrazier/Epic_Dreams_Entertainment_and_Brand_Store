@@ -42,7 +42,7 @@ export function LoginForm() {
         <label className="text-xs uppercase tracking-[0.3em] text-white/60">Email</label>
         <input
           type="email"
-          className="w-full rounded-2xl border border-white/20 bg-black/40 px-4 py-3 text-sm text-white focus:border-accent-gold focus:outline-none"
+          className="w-full rounded-2xl border border-white/20 bg-black/40 px-4 py-3 text-sm text-white focus:border-accent-violet focus:outline-none"
           {...register('email', { required: 'Email is required' })}
         />
         {errors.email && <p className="text-xs text-red-400">{errors.email.message}</p>}
@@ -51,7 +51,7 @@ export function LoginForm() {
         <label className="text-xs uppercase tracking-[0.3em] text-white/60">Password</label>
         <input
           type="password"
-          className="w-full rounded-2xl border border-white/20 bg-black/40 px-4 py-3 text-sm text-white focus:border-accent-gold focus:outline-none"
+          className="w-full rounded-2xl border border-white/20 bg-black/40 px-4 py-3 text-sm text-white focus:border-accent-violet focus:outline-none"
           {...register('password', { required: 'Password is required' })}
         />
         {errors.password && <p className="text-xs text-red-400">{errors.password.message}</p>}
@@ -60,7 +60,7 @@ export function LoginForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-full bg-accent-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full bg-accent-violet px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-accent-violet-light disabled:cursor-not-allowed disabled:opacity-60"
       >
         {loading ? 'Signing in…' : 'Sign In'}
       </button>

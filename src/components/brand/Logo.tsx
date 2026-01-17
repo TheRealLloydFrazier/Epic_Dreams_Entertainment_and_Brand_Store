@@ -32,12 +32,12 @@ export function Logo({ className, size = 'md', showText = true, variant = 'full'
           xmlns="http://www.w3.org/2000/svg"
           className="h-full w-full"
         >
-          {/* Outer glow effect */}
+          {/* Cosmic purple gradient and glow effect */}
           <defs>
-            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#f5d280" />
-              <stop offset="50%" stopColor="#d4af37" />
-              <stop offset="100%" stopColor="#b8960c" />
+            <linearGradient id="cosmicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#c4b5fd" />
+              <stop offset="50%" stopColor="#a78bfa" />
+              <stop offset="100%" stopColor="#7c3aed" />
             </linearGradient>
             <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
               <feGaussianBlur stdDeviation="2" result="coloredBlur" />
@@ -53,7 +53,7 @@ export function Logo({ className, size = 'md', showText = true, variant = 'full'
             cx="50"
             cy="50"
             r="46"
-            stroke="url(#goldGradient)"
+            stroke="url(#cosmicGradient)"
             strokeWidth="2"
             fill="none"
             filter="url(#glow)"
@@ -62,7 +62,7 @@ export function Logo({ className, size = 'md', showText = true, variant = 'full'
           {/* Infinity symbol */}
           <path
             d="M32 50c0-6 4-11 10-11 8 0 8 11 8 11s0 11 8 11c6 0 10-5 10-11s-4-11-10-11c-8 0-8 11-8 11s0-11-8-11c-6 0-10 5-10 11z"
-            stroke="url(#goldGradient)"
+            stroke="url(#cosmicGradient)"
             strokeWidth="3.5"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -105,10 +105,10 @@ export function LogoMark({ className, size = 'md' }: { className?: string; size?
       className={cn(sizes[size], className)}
     >
       <defs>
-        <linearGradient id="goldGradientMark" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#f5d280" />
-          <stop offset="50%" stopColor="#d4af37" />
-          <stop offset="100%" stopColor="#b8960c" />
+        <linearGradient id="cosmicGradientMark" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#c4b5fd" />
+          <stop offset="50%" stopColor="#a78bfa" />
+          <stop offset="100%" stopColor="#7c3aed" />
         </linearGradient>
         <filter id="glowMark" x="-50%" y="-50%" width="200%" height="200%">
           <feGaussianBlur stdDeviation="2" result="coloredBlur" />
@@ -123,7 +123,7 @@ export function LogoMark({ className, size = 'md' }: { className?: string; size?
         cx="50"
         cy="50"
         r="46"
-        stroke="url(#goldGradientMark)"
+        stroke="url(#cosmicGradientMark)"
         strokeWidth="2"
         fill="none"
         filter="url(#glowMark)"
@@ -131,7 +131,7 @@ export function LogoMark({ className, size = 'md' }: { className?: string; size?
 
       <path
         d="M32 50c0-6 4-11 10-11 8 0 8 11 8 11s0 11 8 11c6 0 10-5 10-11s-4-11-10-11c-8 0-8 11-8 11s0-11-8-11c-6 0-10 5-10 11z"
-        stroke="url(#goldGradientMark)"
+        stroke="url(#cosmicGradientMark)"
         strokeWidth="3.5"
         strokeLinecap="round"
         strokeLinejoin="round"

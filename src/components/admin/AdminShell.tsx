@@ -22,7 +22,7 @@ export const AdminShell = {
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-semibold text-white">Admin Dashboard</h1>
           <form action="/api/admin/logout" method="post">
-            <button className="rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70 hover:border-accent-gold hover:text-white">
+            <button className="rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70 hover:border-accent-violet hover:text-white">
               Sign Out
             </button>
           </form>
@@ -31,26 +31,26 @@ export const AdminShell = {
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
             <p className="text-xs uppercase tracking-[0.3em] text-white/60">Products</p>
             <p className="mt-3 text-4xl font-semibold text-white">{stats.products}</p>
-            <Link href="/admin/products" className="mt-6 inline-flex text-xs uppercase tracking-[0.3em] text-accent-gold">
+            <Link href="/admin/products" className="mt-6 inline-flex text-xs uppercase tracking-[0.3em] text-accent-violet">
               Manage Products →
             </Link>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
             <p className="text-xs uppercase tracking-[0.3em] text-white/60">Orders</p>
             <p className="mt-3 text-4xl font-semibold text-white">{stats.orders}</p>
-            <Link href="/admin/orders" className="mt-6 inline-flex text-xs uppercase tracking-[0.3em] text-accent-gold">
+            <Link href="/admin/orders" className="mt-6 inline-flex text-xs uppercase tracking-[0.3em] text-accent-violet">
               Manage Orders →
             </Link>
           </div>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          <Link href="/admin/discounts" className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/70 hover:border-accent-gold hover:text-white">
+          <Link href="/admin/discounts" className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/70 hover:border-accent-violet hover:text-white">
             Discount Codes
           </Link>
-          <Link href="/admin/releases" className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/70 hover:border-accent-gold hover:text-white">
+          <Link href="/admin/releases" className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/70 hover:border-accent-violet hover:text-white">
             Releases & Drops
           </Link>
-          <Link href="/admin/settings" className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/70 hover:border-accent-gold hover:text-white">
+          <Link href="/admin/settings" className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/70 hover:border-accent-violet hover:text-white">
             Settings
           </Link>
         </div>
