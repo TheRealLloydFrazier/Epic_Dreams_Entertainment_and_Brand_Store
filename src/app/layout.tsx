@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
+import Script from 'next/script';
 import './globals.css';
 import { Footer } from '@components/layout/Footer';
 import { Header } from '@components/layout/Header';
@@ -44,7 +45,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Header />
           <main className="min-h-screen">{children}</main>
           <Footer />
+          {/* ElevenLabs Voice Agent Widget */}
+          {/* @ts-expect-error - Custom element from ElevenLabs */}
+          <elevenlabs-convai agent-id="agent_1101ka9stj9afmb9pz2gk8avqsg6"></elevenlabs-convai>
         </Providers>
+        <Script
+          src="https://unpkg.com/@elevenlabs/convai-widget-embed"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
