@@ -46,7 +46,7 @@ Whether she's singing into the storm or sitting with the ache of an empty chair,
     data: {
       name: 'Lloyd Frazier',
       slug: 'lloyd-frazier',
-      bio: `I'm Lloyd Frazier—an Author, Musician, Singer, Songwriter, Content Creator, and Businessman. I'm the President & Chief Executive Officer of Epic Dreams Asset Management and Holding Company, Incorporated, and the Owner of Epic Dreams Entertainment LLC—a creative home where music, storytelling, and innovation meet.
+      bio: `I'm Lloyd Frazier—an Author, Musician, Singer, Songwriter, Content Creator, and Businessman. I'm the President & Chief Executive Officer of Epic Dreams Entertainment and Brand Store, and the Owner of Epic Dreams Entertainment LLC—a creative home where music, storytelling, and innovation meet.
 
 I've never believed in "factory-made" art. I write my lyrics. I write my music. And I use the latest technology to help bring each piece to life—not to replace the soul of the work, but to amplify it. For me, technology is a paintbrush, not the painter. The message still has to be real. The melody still has to carry weight. The words still have to mean something when the world gets quiet.
 
