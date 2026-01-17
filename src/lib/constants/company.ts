@@ -42,8 +42,10 @@ export const HOLDING_COMPANY: CompanyInfo = {
   industry: 'Entertainment & Brand Store',
   website: 'https://epicdreams.com',
   socials: {
-    instagram: 'https://instagram.com/epicdreamsholding',
-    linkedin: 'https://linkedin.com/company/epic-dreams-holding',
+    instagram: 'https://instagram.com/epicdreamsent',
+    youtube: 'https://youtube.com/@epicdreamsent',
+    tiktok: 'https://tiktok.com/@epicdreamsent',
+    linkedin: 'https://linkedin.com/company/epic-dreams-entertainment',
   },
 };
 

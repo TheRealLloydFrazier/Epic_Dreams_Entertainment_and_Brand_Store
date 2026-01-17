@@ -6,12 +6,12 @@ This document tracks all domain assets owned by Epic Dreams Entertainment and Br
 
 | Domain | Registrar | Status | Purpose |
 |--------|-----------|--------|---------|
-| epicdreamsassetmanagement.com | - | Active | Primary corporate website and merch store |
+| epicdreams.com | - | Active | Primary corporate website and merch store |
 | epicdreamsaisolutions.com | Freename | Owned | AI solutions and services |
 
 ## Domain Details
 
-### epicdreamsassetmanagement.com
+### epicdreams.com
 - **Purpose:** Primary domain for Epic Dreams Entertainment and Brand Store
 - **Deployment:** Vercel
 - **DNS Configuration:** See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for DNS setup instructions
