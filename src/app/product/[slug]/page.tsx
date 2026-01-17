@@ -84,7 +84,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
           </div>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.4em] text-accent-teal">Epic Dreams Merch</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-accent-gold">Epic Dreams Merch</p>
           <h1 className="mt-3 text-3xl font-semibold text-white">{product.title}</h1>
           <p className="mt-3 text-sm text-white/70">{product.description}</p>
           <AddToCartForm product={storeProduct} />

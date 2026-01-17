@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { HOLDING_COMPANY, SUBSIDIARIES } from '@lib/constants/company';
+import { LogoMark } from '@components/brand/Logo';
 
 const entertainment = SUBSIDIARIES.find(s => s.id === 'epic-dreams-entertainment');
 
@@ -24,17 +25,20 @@ const companyLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-black/80">
+    <footer className="border-t border-accent-gold/20 bg-black/90">
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="grid gap-8 md:grid-cols-4">
           <div>
-            <p className="font-display text-2xl uppercase tracking-[0.4em] text-white">Epic Dreams</p>
+            <div className="flex items-center gap-3">
+              <LogoMark size="lg" />
+              <p className="font-display text-xl uppercase tracking-[0.3em] text-white">Epic Dreams</p>
+            </div>
             <p className="mt-4 text-sm text-white/60">
               Epic Dreams Entertainment is a forward-thinking label building immersive worlds through music, design, and story.
             </p>
             {/* Part of organization badge */}
-            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2 py-1">
-              <span className="text-sm text-accent-teal">∞</span>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-accent-gold/30 bg-accent-gold/5 px-3 py-1.5">
+              <span className="text-sm text-accent-gold">∞</span>
               <span className="text-[10px] text-white/50">Part of Epic Dreams Organization</span>
             </div>
           </div>

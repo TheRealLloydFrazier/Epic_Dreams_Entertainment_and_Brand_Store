@@ -44,8 +44,8 @@ export function StoreFilters() {
               }
               className={`rounded-full border px-4 py-2 uppercase tracking-[0.2em] transition ${
                 params.get('category') === category
-                  ? 'border-accent-teal text-accent-teal'
-                  : 'border-white/20 hover:border-accent-teal hover:text-white'
+                  ? 'border-accent-gold text-accent-gold'
+                  : 'border-white/20 hover:border-accent-gold hover:text-white'
               }`}
             >
               {category}
@@ -62,8 +62,8 @@ export function StoreFilters() {
               onClick={() => updateParam('size', params.get('size') === size ? undefined : size)}
               className={`rounded-full border px-3 py-2 text-xs uppercase tracking-[0.3em] transition ${
                 params.get('size') === size
-                  ? 'border-accent-teal text-accent-teal'
-                  : 'border-white/20 hover:border-accent-teal hover:text-white'
+                  ? 'border-accent-gold text-accent-gold'
+                  : 'border-white/20 hover:border-accent-gold hover:text-white'
               }`}
             >
               {size}
@@ -80,8 +80,8 @@ export function StoreFilters() {
               onClick={() => updateParam('color', params.get('color') === color ? undefined : color)}
               className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.3em] transition ${
                 params.get('color') === color
-                  ? 'border-accent-teal text-accent-teal'
-                  : 'border-white/20 hover:border-accent-teal hover:text-white'
+                  ? 'border-accent-gold text-accent-gold'
+                  : 'border-white/20 hover:border-accent-gold hover:text-white'
               }`}
             >
               {color}
@@ -98,8 +98,8 @@ export function StoreFilters() {
               onClick={() => updateParam('sort', option.value)}
               className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.3em] transition ${
                 params.get('sort') === option.value
-                  ? 'border-accent-teal text-accent-teal'
-                  : 'border-white/20 hover:border-accent-teal hover:text-white'
+                  ? 'border-accent-gold text-accent-gold'
+                  : 'border-white/20 hover:border-accent-gold hover:text-white'
               }`}
             >
               {option.label}
@@ -110,7 +110,7 @@ export function StoreFilters() {
       <div>
         <button
           onClick={() => router.replace(pathname)}
-          className="w-full rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70 transition hover:border-accent-teal hover:text-white"
+          className="w-full rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70 transition hover:border-accent-gold hover:text-white"
         >
           Clear Filters
         </button>

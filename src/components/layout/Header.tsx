@@ -6,6 +6,7 @@ import { ShoppingBag, Menu } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@lib/utils/styles';
 import { useCart } from '@lib/hooks/use-cart';
+import { Logo } from '@components/brand/Logo';
 
 const navItems = [
   { href: '/', label: 'Home' },
@@ -22,10 +23,10 @@ export function Header() {
   const { cartCount } = useCart();
 
   return (
-    <header className="sticky top-0 z-50 bg-black/80 backdrop-blur border-b border-white/10">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-center gap-2 text-lg font-semibold uppercase tracking-[0.2em]">
-          Epic Dreams
+    <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-accent-gold/20">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <Link href="/" className="flex items-center">
+          <Logo size="sm" showText={true} />
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
@@ -44,7 +45,7 @@ export function Header() {
           <Link href="/cart" className="relative inline-flex items-center">
             <ShoppingBag className="h-5 w-5" />
             {cartCount > 0 && (
-              <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-accent-teal text-xs font-semibold text-black">
+              <span className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-accent-gold text-xs font-semibold text-black">
                 {cartCount}
               </span>
             )}
