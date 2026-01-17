@@ -58,7 +58,7 @@ export function CartClient({
   return (
     <div className="space-y-8">
       {success && (
-        <div className="rounded-3xl border border-accent-teal/60 bg-accent-teal/10 p-4 text-sm text-accent-teal">
+        <div className="rounded-3xl border border-accent-gold/60 bg-accent-gold/10 p-4 text-sm text-accent-gold">
           Payment complete! Check your email for order confirmation.
         </div>
       )}
@@ -81,7 +81,7 @@ export function CartClient({
           value={discountCode}
           onChange={(event) => setDiscountCode(event.target.value.toUpperCase())}
           placeholder="Discount code"
-          className="min-w-[160px] flex-1 rounded-full border border-white/20 bg-black/40 px-4 py-2 text-sm text-white focus:border-accent-teal focus:outline-none"
+          className="min-w-[160px] flex-1 rounded-full border border-white/20 bg-black/40 px-4 py-2 text-sm text-white focus:border-accent-gold focus:outline-none"
         />
         <p className="text-xs text-white/50">Discounts apply automatically at checkout.</p>
       </form>
@@ -144,7 +144,7 @@ export function CartClient({
           <button
             onClick={checkout}
             disabled={loading}
-            className="mt-6 w-full rounded-full bg-accent-teal px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
+            className="mt-6 w-full rounded-full bg-accent-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? 'Processing…' : 'Checkout'}
           </button>

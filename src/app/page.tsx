@@ -28,10 +28,12 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-20 pb-20">
-      <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-br from-black via-black to-accent-violet/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-20 md:flex-row md:items-center">
+      <section className="relative overflow-hidden border-b border-accent-gold/20 bg-gradient-to-br from-black via-accent-cosmic/30 to-accent-violet/10">
+        {/* Cosmic background overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-accent-gold/5 via-transparent to-accent-violet/5" />
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-20 md:flex-row md:items-center">
           <div className="max-w-2xl space-y-6">
-            <p className={`${displayClass} text-xs uppercase tracking-[0.6em] text-accent-teal/80`}>Epic Dreams Entertainment</p>
+            <p className={`${displayClass} text-xs uppercase tracking-[0.6em] text-accent-gold/90`}>Epic Dreams Entertainment</p>
             <h1 className={`${displayClass} text-4xl font-semibold tracking-tight md:text-6xl`}>
               Official Merch. Limited Drops. Signed Editions.
             </h1>
@@ -41,13 +43,13 @@ export default async function HomePage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/store"
-                className="rounded-full bg-accent-teal px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black"
+                className="rounded-full bg-accent-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black hover:bg-accent-gold-light transition-colors"
               >
                 Shop Now
               </Link>
               <Link
                 href="/releases/empty-chair-blues"
-                className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white hover:border-accent-teal"
+                className="rounded-full border border-accent-gold/40 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white hover:border-accent-gold transition-colors"
               >
                 View Release
               </Link>
@@ -65,7 +67,7 @@ export default async function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6 space-y-1">
-              <p className="text-xs uppercase tracking-[0.3em] text-accent-teal">Spotlight</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-accent-gold">Spotlight</p>
               <p className="text-lg font-semibold text-white">{latestRelease?.title ?? 'Empty Chair Blues'}</p>
               <p className="text-sm text-white/70">{latestRelease?.artist?.name ?? 'Kelly Layton'}</p>
             </div>
@@ -95,7 +97,7 @@ export default async function HomePage() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {product.variants.some((variant) => variant.signed) && (
-                  <span className="absolute left-4 top-4 rounded-full bg-accent-violet px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+                  <span className="absolute left-4 top-4 rounded-full bg-accent-gold px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-black">
                     Signed
                   </span>
                 )}
@@ -131,8 +133,8 @@ export default async function HomePage() {
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {posts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.slug}`} className="group rounded-3xl border border-white/10 bg-white/5 p-6">
-              <p className="text-xs uppercase tracking-[0.4em] text-accent-teal">News</p>
+            <Link key={post.id} href={`/blog/${post.slug}`} className="group rounded-3xl border border-accent-gold/20 bg-white/5 p-6 hover:border-accent-gold/40 transition-colors">
+              <p className="text-xs uppercase tracking-[0.4em] text-accent-gold">News</p>
               <h3 className={`${displayClass} mt-4 text-2xl group-hover:text-white`}>{post.title}</h3>
               <p className="mt-3 text-sm text-white/70">{post.excerpt}</p>
               <span className="mt-6 inline-flex items-center text-xs uppercase tracking-[0.3em] text-white/50">

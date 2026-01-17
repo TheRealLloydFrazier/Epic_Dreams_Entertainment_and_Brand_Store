@@ -109,13 +109,15 @@ export function getPlannedSubsidiaries(): CompanyInfo[] {
 // Brand colors for the organization (can be extended per subsidiary)
 export const BRAND_COLORS = {
   primary: {
-    teal: '#00f5ff',
-    violet: '#6a4bff',
     gold: '#d4af37',
+    goldLight: '#f5d280',
+    violet: '#8b5cf6',
+    cosmic: '#1e1b4b',
   },
   backgrounds: {
     dark: '#030303',
     cosmic: '#0a0a1a',
+    deepSpace: '#1e1b4b',
   },
   text: {
     primary: '#f5f5f5',

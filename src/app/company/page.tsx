@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 function CompanyCard({ company, isHolding = false }: { company: CompanyInfo; isHolding?: boolean }) {
   const statusColors = {
-    active: 'bg-accent-teal/20 text-accent-teal',
+    active: 'bg-accent-gold/20 text-accent-gold',
     inactive: 'bg-gray-500/20 text-gray-400',
     planned: 'bg-accent-violet/20 text-accent-violet',
   };
@@ -23,7 +23,7 @@ function CompanyCard({ company, isHolding = false }: { company: CompanyInfo; isH
     <div
       className={`group relative overflow-hidden rounded-xl border transition-all duration-300 ${
         isHolding
-          ? 'border-accent-teal/30 bg-gradient-to-br from-accent-teal/5 to-accent-violet/5 hover:border-accent-teal/50'
+          ? 'border-accent-gold/30 bg-gradient-to-br from-accent-gold/5 to-accent-violet/5 hover:border-accent-gold/50'
           : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10'
       }`}
     >
@@ -67,7 +67,7 @@ function CompanyCard({ company, isHolding = false }: { company: CompanyInfo; isH
 
         {/* Tagline */}
         {company.tagline && (
-          <p className="mt-4 border-l-2 border-accent-teal/50 pl-3 text-sm italic text-white/60">
+          <p className="mt-4 border-l-2 border-accent-gold/50 pl-3 text-sm italic text-white/60">
             &ldquo;{company.tagline}&rdquo;
           </p>
         )}
@@ -80,7 +80,7 @@ function CompanyCard({ company, isHolding = false }: { company: CompanyInfo; isH
                 href={company.socials.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs text-white/50 transition-colors hover:text-accent-teal"
+                className="text-xs text-white/50 transition-colors hover:text-accent-gold"
               >
                 Instagram
               </a>
@@ -90,7 +90,7 @@ function CompanyCard({ company, isHolding = false }: { company: CompanyInfo; isH
                 href={company.socials.youtube}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs text-white/50 transition-colors hover:text-accent-teal"
+                className="text-xs text-white/50 transition-colors hover:text-accent-gold"
               >
                 YouTube
               </a>
@@ -100,7 +100,7 @@ function CompanyCard({ company, isHolding = false }: { company: CompanyInfo; isH
                 href={company.socials.tiktok}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs text-white/50 transition-colors hover:text-accent-teal"
+                className="text-xs text-white/50 transition-colors hover:text-accent-gold"
               >
                 TikTok
               </a>
@@ -110,7 +110,7 @@ function CompanyCard({ company, isHolding = false }: { company: CompanyInfo; isH
                 href={company.socials.twitter}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs text-white/50 transition-colors hover:text-accent-teal"
+                className="text-xs text-white/50 transition-colors hover:text-accent-gold"
               >
                 Twitter
               </a>
@@ -120,7 +120,7 @@ function CompanyCard({ company, isHolding = false }: { company: CompanyInfo; isH
                 href={company.socials.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="text-xs text-white/50 transition-colors hover:text-accent-teal"
+                className="text-xs text-white/50 transition-colors hover:text-accent-gold"
               >
                 LinkedIn
               </a>
@@ -140,7 +140,7 @@ export default function CompanyPage() {
     <div className="mx-auto max-w-6xl px-4 py-16">
       {/* Header */}
       <div className="text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-accent-teal">
+        <p className="text-xs uppercase tracking-[0.3em] text-accent-gold">
           Our Organization
         </p>
         <h1 className={`${displayClass} mt-3 text-4xl md:text-5xl`}>
@@ -157,7 +157,7 @@ export default function CompanyPage() {
         {/* Infinity Symbol Decoration */}
         <div className="mb-8 flex justify-center">
           <div className="relative">
-            <span className="text-6xl text-accent-teal/30">∞</span>
+            <span className="text-6xl text-accent-gold/30">∞</span>
             <span className="absolute inset-0 flex items-center justify-center text-6xl text-accent-violet/20 blur-sm">∞</span>
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function CompanyPage() {
 
         {/* Connection Line */}
         <div className="mb-12 flex justify-center">
-          <div className="h-16 w-px bg-gradient-to-b from-accent-teal/50 to-white/10" />
+          <div className="h-16 w-px bg-gradient-to-b from-accent-gold/50 to-white/10" />
         </div>
 
         {/* Active Subsidiaries */}
@@ -207,7 +207,7 @@ export default function CompanyPage() {
       {/* Mission & Vision */}
       <div className="mt-20 grid gap-8 md:grid-cols-2">
         <div className="rounded-xl border border-white/10 bg-white/5 p-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent-teal">Our Mission</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-accent-gold">Our Mission</p>
           <p className="mt-4 text-lg leading-relaxed text-white/80">
             {HOLDING_COMPANY.mission}
           </p>

@@ -26,13 +26,13 @@ export default async function AdminProductsPage() {
         <div className="flex items-center gap-3">
           <Link
             href="/api/admin/products/export"
-            className="rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70 hover:border-accent-teal hover:text-white"
+            className="rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.3em] text-white/70 hover:border-accent-gold hover:text-white"
           >
             Export CSV
           </Link>
           <Link
             href="/admin/products/new"
-            className="rounded-full bg-accent-teal px-4 py-2 text-xs uppercase tracking-[0.3em] text-black"
+            className="rounded-full bg-accent-gold px-4 py-2 text-xs uppercase tracking-[0.3em] text-black"
           >
             New Product
           </Link>

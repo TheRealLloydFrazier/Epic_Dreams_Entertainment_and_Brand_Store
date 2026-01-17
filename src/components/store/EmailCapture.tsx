@@ -30,7 +30,7 @@ export function EmailCapture() {
   };
 
   if (submitted) {
-    return <p className="text-sm text-accent-teal">Thanks! You’re on the list.</p>;
+    return <p className="text-sm text-accent-gold">Thanks! You’re on the list.</p>;
   }
 
   return (
@@ -38,12 +38,12 @@ export function EmailCapture() {
       <input
         type="email"
         placeholder="Email address"
-        className="flex-1 rounded-full border border-white/20 bg-black/40 px-6 py-3 text-sm text-white placeholder:text-white/40 focus:border-accent-teal focus:outline-none"
+        className="flex-1 rounded-full border border-white/20 bg-black/40 px-6 py-3 text-sm text-white placeholder:text-white/40 focus:border-accent-gold focus:outline-none"
         {...register('email', { required: 'Email is required' })}
       />
       <button
         type="submit"
-        className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-accent-teal"
+        className="rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-accent-gold"
       >
         Join
       </button>

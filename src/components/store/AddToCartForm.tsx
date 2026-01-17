@@ -53,8 +53,8 @@ export function AddToCartForm({ product }: { product: StoreProduct }) {
               onClick={() => setVariantId(variant.id)}
               className={`rounded-2xl border px-4 py-3 text-left text-sm transition ${
                 variantId === variant.id
-                  ? 'border-accent-teal bg-accent-teal/10 text-white'
-                  : 'border-white/20 text-white/70 hover:border-accent-teal hover:text-white'
+                  ? 'border-accent-gold bg-accent-gold/10 text-white'
+                  : 'border-white/20 text-white/70 hover:border-accent-gold hover:text-white'
               }`}
             >
               <div className="flex items-center justify-between">
@@ -94,7 +94,7 @@ export function AddToCartForm({ product }: { product: StoreProduct }) {
         <button
           onClick={addToCart}
           disabled={!selectedVariant || selectedVariant.inventory <= 0 || quantity > (selectedVariant?.inventory ?? 0)}
-          className="flex-1 rounded-full bg-accent-teal px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-60"
+          className="flex-1 rounded-full bg-accent-gold px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-60"
         >
           Add to Cart
         </button>
@@ -102,7 +102,7 @@ export function AddToCartForm({ product }: { product: StoreProduct }) {
       <button
         onClick={addToCart}
         disabled={!selectedVariant || selectedVariant.inventory <= 0}
-        className="w-full rounded-full border border-white/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:border-accent-teal hover:text-accent-teal disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full border border-white/20 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-white transition hover:border-accent-gold hover:text-accent-gold disabled:cursor-not-allowed disabled:opacity-60"
       >
         Buy Now
       </button>

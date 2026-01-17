@@ -13,8 +13,10 @@ const config: Config = {
         background: "#030303",
         foreground: "#f5f5f5",
         accent: {
-          teal: "#00f5ff",
-          violet: "#6a4bff"
+          gold: "#d4af37",
+          "gold-light": "#f5d280",
+          violet: "#8b5cf6",
+          cosmic: "#1e1b4b"
         }
       },
       fontFamily: {

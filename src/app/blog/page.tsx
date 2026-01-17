@@ -18,7 +18,7 @@ export default async function BlogPage() {
           <Link
             key={post.id}
             href={`/blog/${post.slug}`}
-            className="block rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-accent-teal"
+            className="block rounded-3xl border border-white/10 bg-white/5 p-6 hover:border-accent-gold"
           >
             <p className="text-xs uppercase tracking-[0.3em] text-white/50">
               {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : 'Unpublished'}

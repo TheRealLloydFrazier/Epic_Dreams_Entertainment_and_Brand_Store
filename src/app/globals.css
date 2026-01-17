@@ -12,9 +12,9 @@ body {
 }
 
 a {
-  @apply text-accent-teal hover:text-accent-violet transition-colors;
+  @apply text-accent-gold hover:text-accent-violet transition-colors;
 }
 
 ::selection {
-  @apply bg-accent-violet text-black;
+  @apply bg-accent-violet text-white;
 }
