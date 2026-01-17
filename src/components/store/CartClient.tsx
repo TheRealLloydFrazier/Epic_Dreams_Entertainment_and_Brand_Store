@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from '@lib/hooks/use-cart';
-import { formatCurrency } from '@lib/utils/styles';
 import { useEffect, useState } from 'react';
 
 export function CartClient({
@@ -15,7 +14,7 @@ export function CartClient({
   cancel?: boolean;
   discountCode?: string;
 }) {
-  const { items, subtotalCents, updateItem, removeItem, clear, discountCode: storedDiscount, setDiscount } = useCart();
+  const { items, updateItem, removeItem, clear, discountCode: storedDiscount, setDiscount } = useCart();
   const [loading, setLoading] = useState(false);
   const [discountCode, setDiscountCode] = useState(initialDiscount || storedDiscount || '');
 
@@ -59,7 +58,7 @@ export function CartClient({
     <div className="space-y-8">
       {success && (
         <div className="rounded-3xl border border-accent-violet/60 bg-accent-violet/10 p-4 text-sm text-accent-violet">
-          Payment complete! Check your email for order confirmation.
+          Order confirmed! Our team will contact you to collect your measurements and finalize your custom piece.
         </div>
       )}
       {cancel && (
@@ -73,6 +72,16 @@ export function CartClient({
           Clear Cart
         </button>
       </div>
+
+      {/* Made to Order Notice */}
+      <div className="rounded-2xl border border-accent-violet/30 bg-accent-violet/5 p-4">
+        <p className="text-xs uppercase tracking-[0.3em] text-accent-violet">Luxury Made-to-Order</p>
+        <p className="mt-2 text-sm text-white/70">
+          Each item is crafted to your exact measurements. Final pricing will be calculated at checkout
+          based on your custom specifications.
+        </p>
+      </div>
+
       <form
         onSubmit={(event) => event.preventDefault()}
         className="flex flex-wrap items-center gap-3 rounded-3xl border border-white/10 bg-white/5 p-4"
@@ -103,12 +112,12 @@ export function CartClient({
                   <Link href={`/product/${item.productSlug}`} className="text-lg font-semibold text-white">
                     {item.title}
                   </Link>
-                  <p className="text-sm text-white/60">{item.variantName}</p>
+                  <p className="text-sm text-white/60">Personalized Fit</p>
                   {item.signed && (
-                    <p className="text-xs uppercase tracking-[0.3em] text-accent-violet">Signed Variant</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-accent-violet">Signed Edition</p>
                   )}
                 </div>
-                <p className="text-sm text-white/70">{formatCurrency(item.priceCents)}</p>
+                <p className="text-xs uppercase tracking-[0.2em] text-accent-violet">Price at Checkout</p>
               </div>
               <div className="mt-3 flex items-center justify-between">
                 <div className="flex items-center rounded-full border border-white/20 bg-black/40">
@@ -137,19 +146,21 @@ export function CartClient({
       {items.length > 0 && (
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
           <div className="flex items-center justify-between text-sm text-white/70">
-            <p>Subtotal</p>
-            <p>{formatCurrency(subtotalCents)}</p>
+            <p>Items in Cart</p>
+            <p>{items.reduce((acc, item) => acc + item.quantity, 0)} pieces</p>
           </div>
-          <p className="mt-2 text-xs text-white/50">Shipping and taxes calculated at checkout.</p>
+          <p className="mt-2 text-xs text-white/50">
+            Final pricing, shipping, and customization options calculated at checkout.
+          </p>
           <button
             onClick={checkout}
             disabled={loading}
             className="mt-6 w-full rounded-full bg-accent-violet px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-black transition hover:bg-accent-violet-light disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {loading ? 'Processing…' : 'Checkout'}
+            {loading ? 'Processing…' : 'Continue to Checkout'}
           </button>
-          <p className="mt-6 text-xs text-white/50">
-            Test Cards (Stripe): 4242 4242 4242 4242 · Any future date · Any CVC
+          <p className="mt-4 text-center text-xs text-white/50">
+            You'll upload your photo for AI measurements at checkout
           </p>
         </div>
       )}

@@ -84,18 +84,22 @@ export default async function ProductPage({ params }: { params: { slug: string }
           </div>
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.4em] text-accent-violet">Epic Dreams Merch</p>
+          <p className="text-xs uppercase tracking-[0.4em] text-accent-violet">Luxury Collection</p>
           <h1 className="mt-3 text-3xl font-semibold text-white">{product.title}</h1>
           <p className="mt-3 text-sm text-white/70">{product.description}</p>
           <AddToCartForm product={storeProduct} />
           <div className="mt-8 space-y-4 text-sm text-white/70">
             <div>
-              <h2 className="text-xs uppercase tracking-[0.3em] text-white/60">Details</h2>
-              <p className="mt-2">Premium materials, eco-friendly inks, and ethically sourced garments.</p>
+              <h2 className="text-xs uppercase tracking-[0.3em] text-white/60">Craftsmanship</h2>
+              <p className="mt-2">Premium materials, ethically sourced fabrics, and artisan-level attention to detail. Each piece is individually crafted to your exact specifications.</p>
             </div>
             <div>
-              <h2 className="text-xs uppercase tracking-[0.3em] text-white/60">Size Guide</h2>
-              <p className="mt-2">Regular fit. For oversized feel, size up. Refer to our full size guide in the footer.</p>
+              <h2 className="text-xs uppercase tracking-[0.3em] text-white/60">Personalized Fit</h2>
+              <p className="mt-2">Upload your photo at checkout and our AI will determine your exact measurements for a perfect, tailored fit every time.</p>
+            </div>
+            <div>
+              <h2 className="text-xs uppercase tracking-[0.3em] text-white/60">Made to Order</h2>
+              <p className="mt-2">Your piece is crafted specifically for you. Please allow 2-4 weeks for creation and delivery of your custom luxury item.</p>
             </div>
           </div>
         </div>

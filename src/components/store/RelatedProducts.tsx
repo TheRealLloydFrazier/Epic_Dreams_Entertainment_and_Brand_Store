@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { formatCurrency } from '@lib/utils/styles';
 import type { StoreProduct } from '@lib/types/store';
 
 export function RelatedProducts({ products }: { products: StoreProduct[] }) {
   if (products.length === 0) return null;
   return (
     <div>
-      <h2 className="text-lg font-semibold text-white">Related Products</h2>
+      <h2 className="text-lg font-semibold text-white">You May Also Like</h2>
       <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {products.map((product) => (
           <Link
@@ -24,10 +23,10 @@ export function RelatedProducts({ products }: { products: StoreProduct[] }) {
               />
             </div>
             <div className="p-4">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60">Merch</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-white/60">Luxury Collection</p>
               <p className="mt-2 text-base font-semibold text-white">{product.title}</p>
-              <p className="mt-1 text-sm text-white/70">
-                {formatCurrency(product.variants[0]?.priceCents ?? 0)}
+              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-accent-violet">
+                Made to Order
               </p>
             </div>
           </Link>

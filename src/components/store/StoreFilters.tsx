@@ -4,13 +4,10 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useTransition } from 'react';
 
 const categories = ['tees', 'hoodies', 'hats', 'posters', 'stickers', 'signed'];
-const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 const colors = ['Black', 'White', 'Teal', 'Violet'];
 const sorts = [
   { value: 'newest', label: 'Newest' },
-  { value: 'best-selling', label: 'Best Selling' },
-  { value: 'price-asc', label: 'Price ↑' },
-  { value: 'price-desc', label: 'Price ↓' }
+  { value: 'best-selling', label: 'Featured' }
 ];
 
 export function StoreFilters() {
@@ -33,6 +30,14 @@ export function StoreFilters() {
 
   return (
     <aside className="space-y-8 rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/70">
+      {/* Personalized Fit Banner */}
+      <div className="rounded-xl border border-accent-violet/30 bg-accent-violet/5 p-4">
+        <p className="text-xs uppercase tracking-[0.3em] text-accent-violet">All Sizes Personalized</p>
+        <p className="mt-2 text-xs text-white/60">
+          Every piece is made-to-order based on your AI-measured dimensions.
+        </p>
+      </div>
+
       <div>
         <p className="text-xs uppercase tracking-[0.3em] text-white/50">Category</p>
         <div className="mt-4 flex flex-wrap gap-2">
@@ -53,24 +58,7 @@ export function StoreFilters() {
           ))}
         </div>
       </div>
-      <div>
-        <p className="text-xs uppercase tracking-[0.3em] text-white/50">Size</p>
-        <div className="mt-4 grid grid-cols-3 gap-2">
-          {sizes.map((size) => (
-            <button
-              key={size}
-              onClick={() => updateParam('size', params.get('size') === size ? undefined : size)}
-              className={`rounded-full border px-3 py-2 text-xs uppercase tracking-[0.3em] transition ${
-                params.get('size') === size
-                  ? 'border-accent-violet text-accent-violet'
-                  : 'border-white/20 hover:border-accent-violet hover:text-white'
-              }`}
-            >
-              {size}
-            </button>
-          ))}
-        </div>
-      </div>
+
       <div>
         <p className="text-xs uppercase tracking-[0.3em] text-white/50">Color</p>
         <div className="mt-4 grid grid-cols-2 gap-2">
@@ -89,6 +77,7 @@ export function StoreFilters() {
           ))}
         </div>
       </div>
+
       <div>
         <p className="text-xs uppercase tracking-[0.3em] text-white/50">Sort</p>
         <div className="mt-4 flex flex-col gap-2">
@@ -107,6 +96,7 @@ export function StoreFilters() {
           ))}
         </div>
       </div>
+
       <div>
         <button
           onClick={() => router.replace(pathname)}

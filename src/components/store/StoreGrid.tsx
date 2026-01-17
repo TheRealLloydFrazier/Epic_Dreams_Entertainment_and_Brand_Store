@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { prisma } from '@lib/db/prisma';
-import { formatCurrency } from '@lib/utils/styles';
 
 function parseSearchParams(params: Record<string, string | string[] | undefined>) {
   const get = (key: string) => {
@@ -114,10 +113,10 @@ export async function StoreGrid({
               )}
             </div>
             <div className="p-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-white/60">Merch</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-white/60">Luxury Collection</p>
               <p className="mt-3 text-lg font-semibold text-white">{product.title}</p>
-              <p className="mt-2 text-sm text-white/70">
-                {formatCurrency(product.variants[0]?.priceCents ?? 0)}
+              <p className="mt-2 text-xs uppercase tracking-[0.2em] text-accent-violet">
+                Made to Order · Personalized
               </p>
             </div>
           </Link>
